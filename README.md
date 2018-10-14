@@ -1,5 +1,7 @@
 # Establish App
-This repository contains the code that runs the front end of the Establish application used to support the [self rescue manual](http://www.selfrescuemanual.com/) 
+This repository contains the code that runs the front end of the Establish application used to support the [self rescue manual](http://www.selfrescuemanual.com/)
+
+Group email: boisebrigade@gmail.com
 
 ## Project Setup
 1. Install [Nodejs](https://www.nodejs.org)
