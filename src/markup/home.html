@@ -1,0 +1,591 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+	<meta charset="utf-8" />
+
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<title>Boise Schools</title>
+
+	<link rel="shortcut icon" type="image/x-icon" href="css/images/favicon.ico" />
+	<link rel="icon" type="image/png" href="css/images/favicon-32x32.png" sizes="32x32" />
+	<link rel="icon" type="image/png" href="css/images/favicon-16x16.png" sizes="16x16" />
+
+	<!-- Fonts -->
+	<link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet">
+
+	<!-- Vendor Styles -->
+	<link rel="stylesheet" href="vendor/bootstrap-select-1.12.4/dist/css/bootstrap.min.css" />
+	<link rel="stylesheet" href="vendor/bootstrap-select-1.12.4/dist/css/bootstrap-select.min.css" />
+
+	<!-- App Styles -->
+	<link rel="stylesheet" href="css/style.css" />
+
+	<!-- Vendor JS -->
+	<script src="vendor/jquery-3.1.1.min.js"></script>
+	<script src="vendor/bootstrap-select-1.12.4/dist/js/bootstrap.min.js"></script>
+	<script src="vendor/bootstrap-select-1.12.4/dist/js/bootstrap-select.min.js"></script>
+
+	<!-- App JS -->
+	<script src="js/functions.js"></script>
+</head>
+
+<body>
+<div class="wrapper">
+	<header class="header">
+		<div class="shell shell--large">
+			<div class="header__inner">
+				<div class="header__aside">
+					<a href="#" class="logo">Boise Schools</a>
+				</div><!-- /.header__aside -->
+
+				<div class="header__content">
+					<a href="#" class="burger-menu">
+						<span></span>
+						<span></span>
+						<span></span>
+					</a>
+					
+					<nav class="nav">
+						<ul>
+							<li>
+								<a href="#" class="btn">Download Ada County</a>
+							</li>
+
+							<li>
+								<a href="#" class="btn">Download Canyon County</a>
+							</li>
+
+							<li>
+								<a href="#" class="btn">Suggest Resource</a>
+							</li>
+						</ul>
+
+						<span class="nav__overlay"></span>
+					</nav><!-- /.nav -->
+				</div><!-- /.header__content -->
+			</div><!-- /.header__inner -->
+		</div><!-- /.shell -->
+	</header><!-- /.header -->
+
+	
+	<div class="intro" style="background-image: url(css/images/temp/intro.jpg);">
+		<div class="shell shell--large">
+			<div class="intro__inner">
+				<div class="form">
+					<form action="?" method="post">
+						<div class="form__head">
+							<h1>
+								Self Rescue <br/>
+								Manual
+							</h1>
+
+							<p>A guide to all community resources and supports in Ada and Canyon Counties from your friends at the Boise School District</p>
+						</div><!-- /.form__head -->
+						
+						<div class="form__body">
+							<div class="select-custom">
+								<select class="selectpicker" title="Select Your County">
+									<option>Ada County</option>
+									<option>Canyon County</option>
+								</select>
+							</div><!-- /.select-custom -->
+
+							<div class="select-custom">
+								<select class="selectpicker" title="Any Category">
+									<optgroup label="Clothing &amp; Furniture"></optgroup>
+
+									<optgroup label="Health">
+										<option>Counseling &amp; Mental Health</option>
+									</optgroup>
+
+									<optgroup label="Services">
+										<option>Dental</option>
+										<option>Medical Assistance</option>
+										<option>Substance Abuse Treatment</option>
+										<option>Vision</option>
+									</optgroup>
+
+									<optgroup label="Disability Services">
+										<option>Option 1</option>
+										<option>Option 2</option>
+										<option>Option 3</option>
+									</optgroup>
+								</select>
+							</div><!-- /.select-custom -->
+						</div><!-- /.form__body -->
+						
+						<div class="form__actions">
+							<button type="submit" value="Submit" class="form__btn btn btn--blue btn--icon btn--wide">
+								<strong class="btn__icon">
+									<i class="ico-search"></i>
+
+									<i class="ico-search-blue"></i>
+								</strong>
+
+								<span>Show Results</span>
+							</button>
+						</div><!-- /.form__actions -->
+					</form>
+				</div><!-- /.form -->
+			</div><!-- /.intro__inner -->
+		</div><!-- /.shell -->
+	</div><!-- /.intro -->
+
+	<section class="section">
+		<div class="shell">
+			<header class="section__head">
+				<div class="filters">
+					<h4>Explore Resource by County:</h4>
+
+					<ul class="list-checkboxes">
+						<li>
+							<div class="checkbox">
+								<input type="checkbox" name="field-1#" id="field-1#">
+								
+								<label for="field-1#">Ada County</label>
+							</div><!-- /.checkbox -->
+						</li>
+						
+						<li>
+							<div class="checkbox">
+								<input type="checkbox" name="field-2#" id="field-2#">
+								
+								<label for="field-2#">Canyon County</label>
+							</div><!-- /.checkbox -->
+						</li>
+					</ul><!-- /.list-checkboxes -->
+				</div><!-- /.filters -->
+			</header><!-- /.section__head -->
+
+			<div class="section__body">
+				<ul class="list-widgets">
+					<li>
+						<a href="#" class="widget">
+							<figure class="widget__image">
+								<img src="css/images/temp/clothing-furniture@2x.png" alt="" width="90" height="90">
+							</figure><!-- /.widget__image -->
+							
+							<h5 class="widget__title">
+								Clothing &amp; Furniture
+							</h5><!-- /.widget__title -->
+						</a>
+					</li>
+					
+					<li>
+						<a href="#" class="widget">
+							<figure class="widget__image">
+								<img src="css/images/temp/mental-health@2x.png" alt="" width="90" height="90">
+							</figure><!-- /.widget__image -->
+							
+							<h5 class="widget__title">Counseling &amp; Mental Health Services</h5><!-- /.widget__title -->
+						</a>
+					</li>
+					
+					<li>
+						<a href="#" class="widget">
+							<figure class="widget__image">
+								<img src="css/images/temp/dental@2x.png" alt="" width="90" height="90">
+							</figure><!-- /.widget__image -->
+							
+							<h5 class="widget__title">Dental</h5><!-- /.widget__title -->
+						</a>
+					</li>
+					
+					<li>
+						<a href="#" class="widget">
+							<figure class="widget__image">
+								<img src="css/images/temp/dental-copy@2x.png" alt="" width="90" height="90">
+							</figure><!-- /.widget__image -->
+							
+							<h5 class="widget__title">Disability Services</h5><!-- /.widget__title -->
+						</a>
+					</li>
+					
+					<li>
+						<a href="#" class="widget">
+							<figure class="widget__image">
+								<img src="css/images/temp/education@2x.png" alt="" width="90" height="90">
+							</figure><!-- /.widget__image -->
+							
+							<h5 class="widget__title">Education &amp; After-School Programs</h5><!-- /.widget__title -->
+						</a>
+					</li>
+					
+					<li>
+						<a href="#" class="widget">
+							<figure class="widget__image">
+								<img src="css/images/temp/Employment@2x.png" alt="" width="90" height="90">
+							</figure><!-- /.widget__image -->
+							
+							<h5 class="widget__title">Employment &amp; Casual Labor</h5><!-- /.widget__title -->
+						</a>
+					</li>
+					
+					<li>
+						<a href="#" class="widget">
+							<figure class="widget__image">
+								<img src="css/images/temp/financial-assistance-2@2x.png" alt="" width="90" height="90">
+							</figure><!-- /.widget__image -->
+							
+							<h5 class="widget__title">Financial &amp; Utility Assistance</h5><!-- /.widget__title -->
+						</a>
+					</li>
+					
+					<li>
+						<a href="#" class="widget">
+							<figure class="widget__image">
+								<img src="css/images/temp/food-pantry@2x.png" alt="" width="90" height="90">
+							</figure><!-- /.widget__image -->
+							
+							<h5 class="widget__title">Food Pantries</h5><!-- /.widget__title -->
+						</a>
+					</li>
+					
+					<li>
+						<a href="#" class="widget">
+							<figure class="widget__image">
+								<img src="css/images/temp/friendship-feasts@2x.png" alt="" width="90" height="90">
+							</figure><!-- /.widget__image -->
+							
+							<h5 class="widget__title">Friendship Feasts &amp; Community Free Meals</h5><!-- /.widget__title -->
+						</a>
+					</li>
+					
+					<li>
+						<a href="#" class="widget">
+							<figure class="widget__image">
+								<img src="css/images/temp/hotlines-for-crisis@2x.png" alt="" width="90" height="90">
+							</figure><!-- /.widget__image -->
+							
+							<h5 class="widget__title">Hotlines for Crisis &amp; Resources</h5><!-- /.widget__title -->
+						</a>
+					</li>
+					
+					<li>
+						<a href="#" class="widget">
+							<figure class="widget__image">
+								<img src="css/images/temp/housing-resources@2x.png" alt="" width="90" height="90">
+							</figure><!-- /.widget__image -->
+							
+							<h5 class="widget__title">Housing Resources</h5><!-- /.widget__title -->
+						</a>
+					</li>
+					
+					<li>
+						<a href="#" class="widget">
+							<figure class="widget__image">
+								<img src="css/images/temp/legal-assistance@2x.png" alt="" width="90" height="90">
+							</figure><!-- /.widget__image -->
+							
+							<h5 class="widget__title">Legal Assistance &amp; Refugee Agency</h5><!-- /.widget__title -->
+						</a>
+					</li>
+					
+					<li>
+						<a href="#" class="widget">
+							<figure class="widget__image">
+								<img src="css/images/temp/Health@2x.png" alt="" width="90" height="90">
+							</figure><!-- /.widget__image -->
+							
+							<h5 class="widget__title">Medical Assistance</h5><!-- /.widget__title -->
+						</a>
+					</li>
+					
+					<li>
+						<a href="#" class="widget">
+							<figure class="widget__image">
+								<img src="css/images/temp/shelters-showers@2x.png" alt="" width="90" height="90">
+							</figure><!-- /.widget__image -->
+							
+							<h5 class="widget__title">Shelters &amp; Showers</h5><!-- /.widget__title -->
+						</a>
+					</li>
+					
+					<li>
+						<a href="#" class="widget">
+							<figure class="widget__image">
+								<img src="css/images/temp/substance-abuse@2x.png" alt="" width="90" height="90">
+							</figure><!-- /.widget__image -->
+							
+							<h5 class="widget__title">Substance Abuse Treatment</h5><!-- /.widget__title -->
+						</a>
+					</li>
+					
+					<li>
+						<a href="#" class="widget">
+							<figure class="widget__image">
+								<img src="css/images/temp/support-groups@2x.png" alt="" width="90" height="90">
+							</figure><!-- /.widget__image -->
+							
+							<h5 class="widget__title">Support Groups</h5><!-- /.widget__title -->
+						</a>
+					</li>
+					
+					<li>
+						<a href="#" class="widget">
+							<figure class="widget__image">
+								<img src="css/images/temp/tax-prep@2x.png" alt="" width="90" height="90">
+							</figure><!-- /.widget__image -->
+							
+							<h5 class="widget__title">Tax Preparation &amp; Questions</h5><!-- /.widget__title -->
+						</a>
+					</li>
+					
+					<li>
+						<a href="#" class="widget">
+							<figure class="widget__image">
+								<img src="css/images/temp/Transportation@2x.png" alt="" width="90" height="90">
+							</figure><!-- /.widget__image -->
+							
+							<h5 class="widget__title">Transportation</h5><!-- /.widget__title -->
+						</a>
+					</li>
+					
+					<li>
+						<a href="#" class="widget">
+							<figure class="widget__image">
+								<img src="css/images/temp/Vision@2x.png" alt="" width="90" height="90">
+							</figure><!-- /.widget__image -->
+							
+							<h5 class="widget__title">Vision</h5><!-- /.widget__title -->
+						</a>
+					</li>
+				</ul><!-- /.list-widgets -->
+			</div><!-- /.section__body -->
+		</div><!-- /.shell -->
+	</section><!-- /.section -->
+
+	<section class="section">
+		<div class="shell">
+			<div class="section__inner">
+				<div class="section__top">
+					<ul class="breadcrumbs">
+						<li>
+							<a href="#">Ada County</a>
+						</li>
+						
+						<li>
+							<a href="#">Categories</a>
+						</li>
+						
+						<li>
+							<a href="#">Legal Assistance &amp; Refugee Agencies</a>
+						</li>
+					</ul><!-- /.breadcrumbs -->
+					
+					<ul class="list-checkboxes">
+						<li>
+							<div class="checkbox">
+								<input type="checkbox" name="field-11#" id="field-11#">
+								
+								<label for="field-11#">Ada County</label>
+							</div><!-- /.checkbox -->
+						</li>
+						
+						<li>
+							<div class="checkbox">
+								<input type="checkbox" name="field-12#" id="field-12#">
+								
+								<label for="field-12#">Canyon County</label>
+							</div><!-- /.checkbox -->
+						</li>
+					</ul><!-- /.list-checkboxes -->
+				</div><!-- /.section__top -->
+				
+				<div class="section__container">
+					<div class="section__content">
+						<h2>
+							Idaho Legal Aid <br/>
+
+							<small>
+								<a href="https://www.idaholegalaid.org/">idaholegalaid.org</a>
+							</small>
+						</h2>
+
+						<div class="infobox">
+							<div class="infobox__aside">
+								<a href="tel:2083450106">
+									208-345-0106
+
+									<span>ext. 0</span>
+								</a>
+
+								<a href="tel:2083450106">
+									208-345-0106
+
+									<span>Español</span>
+								</a>
+							</div><!-- /.infobox__aside -->
+
+							<div class="infobox__content">
+								Monday - Friday <br/>
+
+								8:30AM - 5:00PM
+							</div><!-- /.infobox__content -->
+						</div><!-- /.infobox -->
+
+						<p>Family law (divorce, custody &amp; protection orders with domestic violence), &amp; landlord-tenant problems, mortgage foreclosure issues. Based on income &amp; type of problem. Walk-ins OK.</p>
+
+						<p>
+							3 statewide toll free legal advice lines:
+
+							<br/>Domestic Violence Legal Advice Line <a href="tel:18775002980">1-877-500-2980</a>
+							
+							<br/>Fair Housing Legal Advice Line <a href="tel:18663450106">1-866-345-0106</a>
+							
+							<br/>Senior Legal Hotline (age 60+) <a href="tel:18663450106">1-866-345-0106</a>.
+						</p>
+					</div><!-- /.section__content -->
+
+					<aside class="section__aside">
+						<div class="map-outer">
+							<div class="map">
+								<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2888.566952410206!2d-116.20021708450354!3d43.61555747912257!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x54aef8e32e575dcd%3A0xc716e8f5b998e471!2zMzEwIE4gNXRoIFN0LCBCb2lzZSwgSUQgODM3MDIsINCh0YrQtdC00LjQvdC10L3QuCDRidCw0YLQuA!5e0!3m2!1sbg!2sbg!4v1531815144556" width="320" height="175" frameborder="0" style="border:0" allowfullscreen></iframe>
+							</div><!-- /.map -->
+
+							<address class="map__address">
+								<a href="https://www.google.com/maps/place/310+N+5th+St,+Boise,+ID+83702,+%D0%A1%D1%8A%D0%B5%D0%B4%D0%B8%D0%BD%D0%B5%D0%BD%D0%B8+%D1%89%D0%B0%D1%82%D0%B8/@43.6155575,-116.2002171,17z/data=!3m1!4b1!4m5!3m4!1s0x54aef8e32e575dcd:0xc716e8f5b998e471!8m2!3d43.6155575!4d-116.1980284">
+									310 N 5th Street <br/>
+									Boise, ID 83702
+								</a>
+							</address><!-- /.map__address -->
+						</div><!-- /.map-outer -->
+					</aside><!-- /.section__aside v-->
+				</div><!-- /.section__container -->
+			</div><!-- /.section__inner -->
+		</div><!-- /.shell -->
+	</section><!-- /.section -->
+
+	<section class="section">
+		<div class="shell">
+			<div class="section__inner">
+				<div class="section__container">
+					<div class="section__content">
+						<h2>
+							Bridges to Access <br/>
+
+							<small>
+								<a href="http://bridgestoaccess.com">bridgestoaccess.com</a>
+							</small>
+						</h2>
+
+						<p class="opacity">Free prescription assistance for GlaxoSmithKline's medicines.</p>
+					</div><!-- /.section__content -->
+				</div><!-- /.section__container -->
+			</div><!-- /.section__inner -->
+		</div><!-- /.shell -->
+	</section><!-- /.section -->
+
+	<section class="section">
+		<div class="shell">
+			<div class="section__inner">
+				<div class="section__container">
+					<div class="section__content">
+						<h2>
+							Idaho Volunteer Lawyers Foreclosure Aid Project <br/>
+
+							<small>
+								<a href="http://isb.idaho.gov/ilf/ivlp/ivlp.html">isb.idaho.gov/ilf/ivlp/ivlp.html</a>
+							</small>
+						</h2>
+
+						<div class="infobox">
+							<div class="infobox__aside">
+								<a href="tel:2083444510">
+									208-334-4510
+								</a>
+
+								<a href="tel:8002213295">
+									800-221-3295
+								</a>
+							</div><!-- /.infobox__aside -->
+
+							<div class="infobox__content">
+								Monday - Friday <br/>
+
+								8:30AM - 5:00PM
+							</div><!-- /.infobox__content -->
+						</div><!-- /.infobox -->
+
+						<p>Phone intake &amp; application over phone, eligibility based on income &amp; type of case. Free legal services for custody &amp; visitation, divorce, debt collection, or modification of child custody court orders, guardianship child, guardianship adult, wills &amp; estates, assistance for nonprofit corps. Priority is domestic violence and/or child endangerment cases. Will not handle criminal cases or any cash settlement.</p>
+					</div><!-- /.section__content -->
+				</div><!-- /.section__container -->
+			</div><!-- /.section__inner -->
+		</div><!-- /.shell -->
+	</section><!-- /.section -->
+
+	<section class="section">
+		<div class="shell">
+			<div class="section__inner">
+				<div class="section__container">
+					<div class="section__content">
+						<h2>
+							Idaho State Council on Developmental Disabilities <br/>
+
+							<small>
+								<a href="https://www.icdd.idaho.gov/">icdd.idaho.gov</a>
+							</small>
+						</h2>
+
+						<div class="infobox">
+							<div class="infobox__aside">
+								<a href="tel:2083342178">
+									208-334-2178
+								</a>
+
+								<a href="tel:2083343417">
+									208-334-3417
+
+									<span>Fax</span>
+								</a>
+							</div><!-- /.infobox__aside -->
+
+							<div class="infobox__content">
+								Monday - Friday <br/>
+
+								8:30AM - 5:00PM
+							</div><!-- /.infobox__content -->
+						</div><!-- /.infobox -->
+					</div><!-- /.section__content -->
+
+					<aside class="section__aside">
+						<div class="map-outer">
+							<div class="map">
+								<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2888.4149487365057!2d-116.20149128450335!3d43.618721779122446!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x54aef8e239c916d7%3A0x8eacda25234057e6!2zNzAwIFcgU3RhdGUgU3QgMXN0IEZsb29yLCBCb2lzZSwgSUQgODM3MDIsINCh0YrQtdC00LjQvdC10L3QuCDRidCw0YLQuA!5e0!3m2!1sbg!2sbg!4v1531815714574" width="320" height="175" frameborder="0" style="border:0" allowfullscreen></iframe>
+							</div><!-- /.map -->
+
+							<address class="map__address">
+								<a href="https://www.google.com/maps/place/700+W+State+St+1st+Floor,+Boise,+ID+83702,+%D0%A1%D1%8A%D0%B5%D0%B4%D0%B8%D0%BD%D0%B5%D0%BD%D0%B8+%D1%89%D0%B0%D1%82%D0%B8/@43.6187218,-116.2014913,17z/data=!3m1!4b1!4m5!3m4!1s0x54aef8e239c916d7:0x8eacda25234057e6!8m2!3d43.6187218!4d-116.1993026">
+									700 W. State Street, 1st Floor <br/>
+									Boise, Idaho 83702
+								</a>
+							</address><!-- /.map__address -->
+						</div><!-- /.map-outer -->
+					</aside><!-- /.section__aside v-->
+				</div><!-- /.section__container -->
+			</div><!-- /.section__inner -->
+		</div><!-- /.shell -->
+	</section><!-- /.section -->
+
+	<footer class="footer">
+		<div class="shell shell--large">
+			<div class="footer__inner">
+				<div class="footer__aside">
+					<p class="copyright">&copy; 2008—2018 Boise Schools / All rights reserved</p><!-- /.copyright -->
+				</div><!-- /.footer__aside -->
+				
+				<div class="footer__content">
+					<p>Adobe Acrobat is needed to view and print the files. Click here to download it for free.</p>
+				</div><!-- /.footer__content -->
+			</div><!-- /.footer__inner -->
+		</div><!-- /.shell -->
+	</footer><!-- /.footer -->
+</div><!-- /.wrapper -->
+
+<!--[if lt IE 10]>
+    <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/" target="_blank">upgrade your browser</a> to improve your experience.</p>
+<![endif]-->
+</body>
+</html>
+
