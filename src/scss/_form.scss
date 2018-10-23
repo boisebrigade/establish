@@ -1,0 +1,26 @@
+/* ------------------------------------------------------------ *\
+	Form
+\* ------------------------------------------------------------ */
+
+.form {
+	max-width: 360px;
+
+	.form__head {
+		margin-bottom: 34px;
+
+		h1{
+			color:red;
+		}
+		p{
+			color: green;
+		}
+	}
+	.form__body {
+		margin-bottom: 34px;
+
+		p{
+			color:white;
+			float:left;
+		}
+	}
+}

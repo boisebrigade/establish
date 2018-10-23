@@ -1,0 +1,46 @@
+/* ------------------------------------------------------------ *\
+	Intro
+\* ------------------------------------------------------------ */
+
+.intro {
+	padding-top: 100px;
+	padding-bottom: 89px;
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center center;
+	position: relative;
+	// color: $color-blue;
+
+	// @media #{$mobile} {
+	// 	padding-bottom: 55px;
+	// }
+
+	&:after {
+		content: '';
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		background: #000;
+		opacity: .6;
+	}
+
+	&__inner {
+		position: relative;
+		z-index: 2;
+	}
+
+	p {
+		font-size: 16px;
+		line-height: 1.5;
+		// color: $color-blue;
+		font-weight: 400;
+		max-width: 360px;
+		margin-bottom: 28px;
+	}
+
+	h1 {
+		margin-bottom: 20px;
+	}
+}

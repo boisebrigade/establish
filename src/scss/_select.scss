@@ -1,0 +1,102 @@
+/* ------------------------------------------------------------ *\
+	Custom Select
+\* ------------------------------------------------------------ */
+
+.select-custom {
+	position: relative;
+	margin-bottom: 11px;
+	max-width: 360px;
+	width: 100%;
+
+	.glyphicon { display: none !important; }
+
+	.btn {
+		white-space: nowrap;
+		display: block;
+		padding: 14px 50px 14px 21px;
+		width: 100%;
+		border-radius: 4px;
+		font-size: 16px;
+		line-height: 1;
+		font-weight: 400;
+		// font-family: $roboto;
+		text-align: left;
+		color: rgba(41, 127, 202, .8);
+		border: 0;
+		background: #fff;
+		height: auto !important;
+		position: relative;
+
+		&:after {
+			content: '';
+			width: 16px;
+			height: 16px;
+			border-width: 3px 3px 0 0;
+			border-style: solid;
+			border-color: rgba(63, 162, 247, .4);
+			position: absolute;
+			right: 21px;
+			top: 50%;
+			margin-top: -12px;
+			transform: rotate(135deg);
+		}
+	}
+
+	.bootstrap-select>.dropdown-toggle.bs-placeholder, .bootstrap-select>.dropdown-toggle.bs-placeholder:active, .bootstrap-select>.dropdown-toggle.bs-placeholder:focus, .bootstrap-select>.dropdown-toggle.bs-placeholder:hover {
+		color: rgba(41, 127, 202, .8);
+	}
+
+	.bootstrap-select.btn-group .dropdown-toggle .filter-option {
+		/* display: inline; */
+	}
+
+	.bs-caret {
+		display: none;
+	}
+
+	.bootstrap-select:not([class*=col-]):not([class*=form-control]):not(.input-group-btn) {
+		width: 100%;
+	}
+
+	.dropdown-menu .divider {
+		display: none;
+	}
+
+	.dropdown-menu>li>a,
+	.dropdown-header {
+		font-size: 16px;
+		line-height: 1;
+		font-weight: 400;
+		// font-family: $roboto;
+		text-align: left;
+		color: rgba(41, 127, 202, .8);
+		padding-top: 5px;
+		padding-bottom: 5px;
+	}
+
+	 .open>.dropdown-toggle.btn-default {
+	 	background: #fff;
+	 }
+
+	.dropdown-menu {
+		border: 0;
+		padding: 10px 0;
+		background: #fff;
+		position: absolute;
+		top: 100%;
+		left: 0;
+		transition: opacity .3s, visibility .3s;
+
+		ul {
+			list-style-type: none;
+		}
+	}
+
+	.bootstrap-select .dropdown-toggle:focus {
+		outline: none !important;
+	}
+}
+
+.dropdown-toggle {
+	background: #fff;
+}

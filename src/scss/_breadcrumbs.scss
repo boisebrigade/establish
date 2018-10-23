@@ -1,0 +1,32 @@
+/* ------------------------------------------------------------ *\
+	Breadcrumbs
+\* ------------------------------------------------------------ */
+
+.breadcrumbs {
+	color: #9B9B9B;
+	margin-bottom: 20px;
+
+	a {
+		color: #9B9B9B;
+		opacity: .8;
+		transition: opacity .3s;
+
+		&:hover {
+			opacity: 1;
+		}
+	}
+
+	li {
+		display: inline-block;
+
+		&:after {
+			content: '»';
+			display: inline-block;
+			vertical-align: 2px;
+		}
+
+		&:last-child:after {
+			display: none;
+		}
+	}
+}

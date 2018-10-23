@@ -1,0 +1,50 @@
+/* ------------------------------------------------------------ *\
+	Nav
+\* ------------------------------------------------------------ */
+
+.nav {
+
+	li {
+		display: inline-block;
+		margin-right: 17px;
+
+		// @media #{$mobile} {
+		// 	margin-right: 0;
+		// 	display: block;
+		// 	margin-bottom: 10px;
+		// }
+
+		&:last-child {
+			margin-right: 0;
+		}
+	}
+
+	.btn {
+		// @media #{$mobile} {
+		// 	width: 100%;
+		// 	text-align: right;
+		// 	color: #fff !important;
+		// }
+	}
+
+	// @media #{$mobile} {
+	// 	position: fixed;
+	// 	top: 0;
+	// 	right: 0;
+	// 	height: 100vh;
+	// 	width: 320px;
+	// 	text-align: right;
+	// 	padding: 70px 0;
+	// 	background: #FF5241;
+	// 	opacity: 0;
+	// 	visibility: hidden;
+	// 	transform: translateX(300px);
+	// 	transition: opacity .3s, visibility .3s, transform .3s;
+	// }
+
+	&.open {
+		opacity: 1;
+		visibility: visible;
+		transform: translateX(0);
+	}
+}

@@ -1,0 +1,42 @@
+/* ------------------------------------------------------------ *\
+	List Widgets
+\* ------------------------------------------------------------ */
+
+.list-widgets {
+	list-style-type: none;
+	display: flex;
+	justify-content: flex-start;
+	flex-wrap: wrap;
+	margin: 0 -15px -30px !important;
+
+	li {
+		flex: 0 0 20%;
+		max-width: 20%;
+		padding: 0 15px;
+		margin-bottom: 30px;
+
+		// @media #{$tablet} {
+		// 	flex: 0 0 25%;
+		// 	max-width: 25%;
+		// }
+
+		// @media #{$mobile} {
+		// 	flex: 0 0 33.33%;
+		// 	max-width: 33.33%;
+		// 	margin-bottom: 15px;
+		// }
+
+		// @media #{$mobile-portrait} {
+		// 	flex: 0 0 100%;
+		// 	max-width: 100%;
+		// }
+	}
+}
+
+/* ------------------------------------------------------------ *\
+	List Primary
+\* ------------------------------------------------------------ */
+
+.list-primary {
+	list-style-type: none;
+}

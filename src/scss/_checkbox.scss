@@ -1,0 +1,81 @@
+/* ------------------------------------------------------------ *\
+	List Checkboxes
+\* ------------------------------------------------------------ */
+
+.list-checkboxes {
+	list-style-type: none;
+
+	li {
+		display: inline-block;
+		margin-right: 28px;
+	}
+}
+
+/* ------------------------------------------------------------ *\
+	Checkboxes
+\* ------------------------------------------------------------ */
+
+.checkbox {
+	position: relative;
+	margin: 0;
+	color: #9B9B9B;
+
+	input {
+		position: absolute;
+		left: 0;
+		top: 0;
+		width: 0;
+		height: 0;
+		opacity: 0;
+		visibility: hidden;
+		width: 0;
+		height: 0;
+		display: none;
+
+		&:checked + label:before {
+			opacity: 1;
+			visibility: visible;
+		}
+
+		&:checked + label:after {
+			box-shadow: none;
+			// border-color: $color-blue;
+		}
+	}
+
+	label {
+		position: relative;
+		padding-left: 25px;
+
+		&:after {
+			content: '';
+			position: absolute;
+			left: 0;
+			top: .7em;
+			transform: translateY(-50%);
+			width: 16px;
+			height: 16px;
+			border-radius: 3px;
+			border: 1px solid #B4BFC9;
+			box-shadow: 0 1px 3px rgba(0, 0, 0, 0.07);
+			transition: border-color .3s;
+		}
+
+		&:before {
+			content: '';
+			position: absolute;
+			left: 3px;
+			top: .73em;
+			transform: translateY(-50%);
+			// background-image: url(../css/images/temp/check@2x.png);
+			width: 10px;
+			height: 8px;
+			background-size: 100% 100%;
+			background-repeat: no-repeat;
+			background-position: center center;
+			opacity: 0;
+			visibility: hidden;
+			transition: opacity .3s, visibility .3s;
+		}
+	}
+}

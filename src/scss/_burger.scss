@@ -1,0 +1,55 @@
+/* ------------------------------------------------------------ *\
+	Burger Menu
+\* ------------------------------------------------------------ */
+
+.burger-menu {
+	display: inline-block;
+	width: 30px;
+	z-index: 2;
+	position: relative;
+	top: 27px;
+	right: 30%;
+
+	span {
+		position: relative;
+		display: block;
+		height: 2px;
+		top: 0;
+		background: #fff;
+		transition: .3s;
+
+		& + span {
+			margin-top: 4px;
+		}
+	}
+	li {
+		list-style: none;
+		padding: .75rem .25rem;
+		float:right;
+		opacity: 0;
+		transition: opacity .2s ease-in;
+	}
+	&.active {
+		span {
+			&:nth-child(1) {
+				top: 6px;
+				transform: rotate(45deg);
+				transition: top .3s, transform .3s .3s;
+			}
+
+			&:nth-child(2) {
+				opacity: 0;
+			}
+
+			&:nth-child(3) {
+				top: -6px;
+				transform: rotate(-45deg);
+				transition: top .3s, transform .3s .3s;
+			}
+		}
+		li {
+			opacity: 1;
+		}
+
+	}
+}

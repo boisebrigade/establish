@@ -1,0 +1,83 @@
+/* ------------------------------------------------------------ *\
+	Button
+\* ------------------------------------------------------------ */
+
+.btn {
+	appearance: none;
+	display: inline-block;
+	text-align: center;
+	background: #FF5241;
+	color: #fff;
+	border: 2px solid #FF5241;
+	border-radius: 4px;
+	font-size: 16px;
+	line-height: 1.2;
+	font-weight: 400;
+	// font-family: $roboto;
+	width: 149px;
+	padding: 1px 15px;
+	white-space: normal;
+	transition: color .3s, background .3s;
+
+	&:hover {
+		background-color: transparent;
+		color: #FF5241;
+	}
+
+	&--wide {
+		width: auto;
+		padding: 9px 28px;
+	}
+
+	&--icon {
+
+		.btn__icon {
+			position: relative;
+			display: inline-block;
+			font-size: 0;
+			vertical-align: middle;
+
+			& + span {
+				margin-left: 20px;
+				padding-right: 10px;
+			}
+		}
+
+		i {
+			display: inline-block;
+			transition: opacity .3s, visibility .3s;
+
+			&:nth-child(2) {
+				position: absolute;
+				top: 0;
+				left: 0;
+				opacity: 0;
+				visibility: hidden;
+			}
+		}
+
+		&:hover {
+			i {
+				&:nth-child(1) {
+					opacity: 0;
+					visibility: hidden;
+				}
+
+				&:nth-child(2) {
+					opacity: 1;
+					visibility: visible;
+				}
+			}
+		}
+	}
+
+	&--blue {
+		background: #3FA2F7;
+		color: #fff;
+		border-color: #3FA2F7;
+
+		&:hover {
+			color: #3FA2F7;
+		}
+	}
+}

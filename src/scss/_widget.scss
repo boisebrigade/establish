@@ -1,0 +1,41 @@
+/* ------------------------------------------------------------ *\
+	Widgets
+\* ------------------------------------------------------------ */
+
+.widgets {
+
+}
+
+/* ------------------------------------------------------------ *\
+	Widget
+\* ------------------------------------------------------------ */
+
+.widget {
+	// border: 2px solid $color-blue;
+	border-radius: 8px;
+	background: #E4F1FD;
+	color: #297FCA;
+	display: block;
+	transition: color .3s, background .3s;
+	text-align: center;
+	height: 100%;
+	padding: 0 15px 16px;
+	min-height: 160px;
+
+	// @media #{$mobile} {
+	// 	min-height: 0;
+	// }
+
+	&:hover {
+		background: #d1e9ff;
+	}
+
+	h5 {
+		font-weight: 400;
+		line-height: 1.2;
+	}
+
+	.widget__image {
+		margin-bottom: -7px;
+	}
+}

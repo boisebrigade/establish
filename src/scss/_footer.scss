@@ -1,0 +1,44 @@
+/* ------------------------------------------------------------ *\
+	Footer
+\* ------------------------------------------------------------ */
+
+.footer {
+	background: #E4F1FD;
+	color: rgba(41, 127, 202, .8);
+	padding: 19px 0;
+
+	// @media #{$mobile} {
+	// 	font-size: 13px;
+	// }
+
+	.footer__inner {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+
+		// @media #{$mobile} {
+		// 	display: block;
+		// 	text-align: center;
+		// }
+	}
+
+	.footer__aside {
+		flex: 0 0 auto;
+		max-width: auto;
+
+		// @media #{$mobile} {
+		// 	margin-bottom: 10px;
+		// }
+	}
+
+	.footer__content {
+		text-align: right;
+		flex: 0 1 100%;
+		max-width: 100%;
+		padding-left: 10px;
+
+		// @media #{$mobile} {
+		// 	text-align: center;
+		// }
+	}
+}

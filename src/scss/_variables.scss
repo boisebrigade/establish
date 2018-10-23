@@ -1,0 +1,35 @@
+/* ------------------------------------------------------------ *\
+	Variables
+\* ------------------------------------------------------------ */
+
+/*  Breakpoints  */
+
+// $responsive-xxs: 580px;
+// $responsive-xs: 767px;
+// $responsive-sm: 991px;
+// $responsive-md: 1199px;
+// $responsive-lg: 1430px;
+//
+// // $mobile-portrait: '(max-width: #{$responsive-xxs}) ';
+// // $mobile: '(max-width: #{$responsive-xs}) ';
+// // $tablet: '(max-width: #{$responsive-sm}) ';
+// // $small-desktop: '(max-width: #{$responsive-md}) ';
+// // $large-desktop: '(max-width: #{$responsive-lg}) ';
+//
+// $retina: '(min-resolution: 2dppx) ';
+//
+// /*  Fonts  */
+//
+// $roboto: 		'Roboto', sans-serif;
+//
+// /*  Colors  */
+//
+// $color-blue: 	#297FCA;
+$color-red-error: rgb(185, 74, 72) !default;
+$color-grey-arrow: rgba(204, 204, 204, 0.2) !default;
+
+$width-default: 220px !default; // 3 960px-grid columns
+
+$zindex-select-dropdown: 1060 !default; // must be higher than a modal background (1050)
+
+$input-color-placeholder: #999 !default;

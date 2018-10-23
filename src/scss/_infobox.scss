@@ -1,0 +1,37 @@
+/* ------------------------------------------------------------ *\
+	Infobox
+\* ------------------------------------------------------------ */
+
+.infobox {
+	display: flex;
+	justify-content: space-between;
+	margin-bottom: 29px;
+
+	// @media #{$mobile} {
+	// 	display: block;
+	// 	margin-bottom: 15px;
+	// }
+
+	a {
+		display: block;
+		margin-right: 15px;
+		font-weight: 700;
+		font-size: 16px;
+		color: rgba(41, 127, 202, .8);
+
+		span {
+			display: inline-block;
+			margin-left: 5px;
+		}
+	}
+
+	.infobox__aside {
+		// @media #{$mobile} {
+		// 	margin-bottom: 10px;
+		// }
+	}
+
+	.infobox__content {
+		color: rgba(41, 127, 202, .8);
+	}
+}
