@@ -16,11 +16,7 @@
       <b-button type="submit">Add New Entry</b-button>
     </b-form>
 
-    <ul>
-      <li v-for="error of errors">
-        {{error.message}}
-      </li>
-    </ul>
+  
   </div>
 </template>
 
@@ -30,7 +26,9 @@ import { db } from '../main'
 export default {
   data() {
     return {
-      entries: [],
+      entries: [{
+        tels:[]
+      }],
       entryTitle: '',
       entryDescription: '',
       errors: []

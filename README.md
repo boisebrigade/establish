@@ -8,8 +8,16 @@ Group email: boisebrigade@gmail.com
 [Website](http://www.boisebrigade.org)  
 [Mockups](https://sketch.cloud/s/lKP8e/all/pages/landing-page-small-combined)  
 [Group Email](boisebrigade@gmail.com)  
-[Establish API](https://github.com/boisebrigade/establish-api)  
-[Establish App Dev Server](http://selfrescue.boisebrigade.org)
+
+[Establish App Dev Server](https://establish-rescuemanual.firebaseapp.com/)
+
+
+## To run this app for development you'll need the following packages installed in your dev environment:
+* node, npm, and yarn
+* vue-cli
+* firebase-tools
+
+
 
 ## Project setup
 ```

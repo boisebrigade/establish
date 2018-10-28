@@ -22,7 +22,11 @@ Vue.use(VueFire)
 
 firebase.initializeApp({
   projectId: 'establish-rescuemanual',
-  databaseURL: 'https://establish-rescuemanual.firebaseio.com'
+  databaseURL: 'https://establish-rescuemanual.firebaseio.com',
+  apiKey: "AIzaSyCyN6-yuvZ8zM2B6nyu6uM9LyKpDv6xFZM",
+  projectId: "establish-rescuemanual",
+  storageBucket: "establish-rescuemanual.appspot.com",
+  messagingSenderId: "770231305115"
 })
 
 export const db = firebase.firestore()

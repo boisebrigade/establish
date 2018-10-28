@@ -30,7 +30,6 @@ import Hero from '@/components/Hero.vue'
 import CategoryHeader from '@/components/CategoryHeader.vue'
 import Directory from '@/components/Directory.vue'
 import Footer from '@/components/Footer.vue'
-import Entries from '@/components/Entries.vue'
 import Categories from '@/components/Categories.vue'
 
 export default {
@@ -45,7 +44,6 @@ export default {
     CategoryHeader,
     Directory,
     Footer,
-    Entries,
     Categories
   }
 }

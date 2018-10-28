@@ -23,8 +23,8 @@
 						</li>
 					</ul>
 				</div>
-				<div class="section__container">
-					<div class="section__content">
+				<div class="section__container" id="results">
+					<div class="section__content" >
             <h2>
 							Idaho Legal Aid <br/>
 							<small>
@@ -75,7 +75,7 @@
 </template>
 
 <script>
-
+import Entry from '@/components/Entry.vue'
 export default {
   name: 'Directory',
   props: {

@@ -22,7 +22,7 @@
                 <option :value="null">Any Category</option>
                 <option v-for="(category, idx) in categories" :key="idx" :value="category.title"> {{category.title}} </option>
               </b-form-select>
-              <b-button v-on:click="listEntries()" type="submit" variant="primary" size="lg" v-scroll-to="'#results'">
+              <b-button v-on:click="listEntries()" type="submit" variant="primary" size="lg" v-scroll-to="'#results'" class="form__btn btn btn--blue btn--icon btn--wide">
                 <font-awesome-icon icon="search" />
                 Show Results
               </b-button>
@@ -31,6 +31,15 @@
   		</div><!-- /.shell -->
 		</div><!-- /.intro -->
 </template>
+
+<style scoped lang="scss">
+  h1{
+    color: rgb(41, 127, 202);
+  }
+  p{
+    color: rgb(41, 127, 202);
+  }
+</style>
 
 <script>
 import { db } from '../main'
