@@ -5,7 +5,6 @@
     <CategoryHeader />
     <Categories />
     <Directory />
-    <Entries />
     <Footer />
   </div>
 </template>

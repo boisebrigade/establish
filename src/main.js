@@ -2,6 +2,7 @@ import Vue from 'vue'
 import App from './App.vue'
 import './registerServiceWorker'
 import store from './store'
+import router from './router'
 
 import BootstrapVue from 'bootstrap-vue'
 Vue.use(BootstrapVue);
@@ -16,9 +17,7 @@ library.add(faSearch)
 Vue.component('font-awesome-icon', FontAwesomeIcon)
 
 import firebase from 'firebase/app'
-import VueFire from 'vuefire'
 import 'firebase/firestore'
-Vue.use(VueFire)
 
 firebase.initializeApp({
   projectId: 'establish-rescuemanual',
@@ -29,6 +28,9 @@ firebase.initializeApp({
   messagingSenderId: "770231305115"
 })
 
+import VueFire from 'vuefire'
+Vue.use(VueFire)
+
 export const db = firebase.firestore()
 
 var VueScrollTo = require('vue-scrollto');
@@ -38,5 +40,6 @@ Vue.config.productionTip = false
 
 new Vue({
   store,
+  router,
   render: h => h(App)
 }).$mount('#app')
