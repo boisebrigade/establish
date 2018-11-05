@@ -1,5 +1,5 @@
 <template>
-  <div id="Categories">
+  <div id="Categories" class="container">
     <ul v-if="categories && categories.length" class="list-widgets">
       <li v-for="(category, idx) in categories" :key="idx">
         <a href="#" class="widget" v-on:click="listEntries(category.title)" v-scroll-to="'#results'">
@@ -34,11 +34,11 @@ export default {
       errors: []
     }
   },
-  firestore () {
-    return {
-      categories: db.collection('categories')
-    }
-  },
+  // firestore () {
+  //   return {
+  //     categories: db.collection('categories')
+  //   }
+  // },
   methods: {
     listEntries (title) {
       console.log(title)

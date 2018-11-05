@@ -1,11 +1,13 @@
 <template>
   <div id="app">
-    <Header />
-    <Hero />
-    <CategoryHeader />
-    <Categories />
-    <Directory />
-    <Footer />
+    <div class="wrapper">
+      <Header />
+      <Hero />
+      <CategoryHeader />
+      <Categories />
+      <Directory />
+      <Footer />
+    </div>
   </div>
 </template>
 
@@ -22,14 +24,13 @@
   color: #2c3e50;
 }
 </style>
-
 <script>
 import Header from '@/components/Header.vue'
 import Hero from '@/components/Hero.vue'
 import CategoryHeader from '@/components/CategoryHeader.vue'
+import Categories from '@/components/Categories.vue'
 import Directory from '@/components/Directory.vue'
 import Footer from '@/components/Footer.vue'
-import Categories from '@/components/Categories.vue'
 
 export default {
   name: 'app',
@@ -41,9 +42,9 @@ export default {
     Header,
     Hero,
     CategoryHeader,
+    Categories,
     Directory,
-    Footer,
-    Categories
+    Footer
   }
 }
 </script>

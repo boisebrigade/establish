@@ -4,15 +4,16 @@ import Vuex from 'vuex'
 Vue.use(Vuex)
 
 const state = {
-  isAdmin: false
+  isAdmin: false,
+  isUser: true
 }
 
 const mutations = {
   login (state) {
-    state.isAdmin = true
+    state.isUser = true
   },
   logout (state) {
-    state.isAdmin = false
+    state.isUser = false
   }
 }
 

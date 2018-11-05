@@ -1,38 +1,42 @@
 <template>
-  <div class="section__content" v-if="entries && entries.length">
-    <div v-for="(entry, idx) in entries" :key="idx">
-      <h2>{{entry.title}}<br/>
-        <small>
-          <a :href="entry.weburl">{{entry.webtitle}}</a>
-        </small>
-      </h2>
-      <div class="infobox">
-        <div class="infobox__aside" v-for="(tel, idx) in phones" :key="idx">
-          <a :href="tel.number">
-            {{tel.number}}<br/><span>{{tel.type}}</span>
-          </a>
-        </div>
-        <div class="infobox__content" v-for="(time, idx) in open" :key="idx">
-          {{time.days}}
-          {{time.hours}}
-        </div>
+  <div class="text">
+    <div v-for="(resource, idx) in resources" :key="idx">
+      <div class="section__content" >
+        <h2>{{resource.title}}<br/>
+          <small>
+            <a :href="resource.url">{{resource.url}}</a>
+          </small>
+        </h2>
+        <b-row>
+          <b-col>
+            <a :href="resource.phone">
+              {{resource.phone}}<br/><span>{{resource.phone_ext}}</span>
+            </a>
+          </b-col>
+          <b-col>
+            <div>
+              {{resource.days_open}}
+              {{resource.times_open}}
+            </div>
+          </b-col>
+        </b-row>
       </div>
-      <p>{{entry.description}}</p>
-      <p>{{entry.addInfo}}</p>
-      <aside class="section__aside">
+      <aside>
         <div class="map-outer">
-          <div class="map" v-for="(map, idx) in maps" :key="idx">
-            <iframe :src="map.maptile" width="320" height="175" frameborder="0" style="border:0" allowfullscreen></iframe>
+          <div class="map">
+            <iframe :src="resource.map_tile" width="320" height="175" frameborder="0" style="border:0" allowfullscreen></iframe>
             <address class="map__address">
-              <a :href="map.address">
-                {{map.street}}<br/>
-                {{map.city}}, {{map.state}} {{map.zip}}
+              <a :href="resource.map_address">
+                {{resource.street}}<br/>
+                {{resource.city}}, {{resource.state}} {{resource.zip}}
               </a>
             </address>
           </div>
         </div>
       </aside>
-      <div class="section__content" v-if="errors && errors.length">
+      <p>{{resource.description}}</p>
+      <p>{{resource.add_info}}</p>
+      <div v-if="errors && errors.length">
         <ul>
           <li v-for="error of errors">
             {{error.message}}
@@ -44,48 +48,37 @@
 </template>
 
 <style scoped lang="scss">
-  h2{
-    text-align: left;
-    box-sizing: border-box;
-    color:rgb(41, 127, 202);
-    display: block;
-    font-family:Roboto, sans-serif;
-    font-size:52px;
-    font-weight:300;
-    height:104px;
-    letter-spacing: -1.82px ;
-    line-height:52px;
-    }
 
-  p {
-    text-align: left;
-    box-sizing: border-box;
-    color:rgb(41, 127, 202);
-    display:block;
-    font-family:Roboto, sans-serif;
-    font-size:16px;
-    font-weight:400;
-    height:72px;
-    line-height:24.8px;
-    outline-color:rgb(41, 127, 202);
-  }
+.text {
+   color: #297FCA;
+   text-align: left;
+ }
+ aside{
+
+ }
 </style>
 
 <script>
-import { db } from '../main'
-
+import axios from 'axios';
 export default {
   name: 'Resources',
   data() {
     return {
-      resources: [],
-      errors: []
+      resources: null,
+      errors: null,
     }
   },
-  firestore () {
-    return {
-      resources: db.collection('resources'),
-    }
+  mounted () {
+    axios
+      // .get('https://api.coindesk.com/v1/bpi/currentprice.json')
+      .get('http://localhost:3000/resources')
+      .then(response => (this.resources = response.data))
+      .catch(error => (this.errors = error))
   }
+  // firestore () {
+  //   return {
+  //     resources: db.collection('resources')
+  //   }
+  // }
 }
 </script>

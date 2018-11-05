@@ -1,27 +1,32 @@
 <template>
-  <div class="home">
-    <!-- <HelloWorld /> -->
-    <Hero />
-    <CategoryGrid />
-    <Directory />
-    <Footer />
+  <div id="home">
+    <div class="wrapper">
+      <Header />
+      <Hero />
+      <CategoryHeader />
+      <Categories />
+      <Directory />
+      <Footer />
+    </div>
   </div>
 </template>
 
-<script>
 
-import HelloWorld from '@/components/HelloWorld.vue'
+<script>
+import Header from '@/components/Header.vue'
 import Hero from '@/components/Hero.vue'
-import CategoryGrid from '@/components/CategoryGrid.vue'
+import CategoryHeader from '@/components/CategoryHeader.vue'
+import Categories from '@/components/Categories.vue'
 import Directory from '@/components/Directory.vue'
 import Footer from '@/components/Footer.vue'
 
 export default {
   name: 'home',
   components: {
-    HelloWorld,
+    Header,
     Hero,
-    CategoryGrid,
+    CategoryHeader,
+    Categories,
     Directory,
     Footer
   }

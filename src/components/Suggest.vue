@@ -1,5 +1,7 @@
 <template>
   <div>
+  <b-btn v-if="!$store.state.isUser" @click="$store.state.isUser = true">Login</b-btn>
+  <div v-if="$store.state.isUser">
     <b-form @submit="onSubmit" @reset="onReset">
       <b-form-group id="exampleInputGroup1"
                     label="Email address:"
@@ -41,6 +43,7 @@
       <b-button type="reset" variant="danger">Reset</b-button>
     </b-form>
   </div>
+</div>
 </template>
 
 <script>

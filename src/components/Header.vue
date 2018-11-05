@@ -38,16 +38,17 @@
               </li>
             </ul>
             <span class="nav__overlay"></span>
-          </nav>
-        </div>
-			</div>
-		</div>
-    <div>
+          </nav><!-- /.nav -->
+        </div><!-- /.header__content -->
+      </div><!-- /.header__inner -->
+    </div><!-- /.shell -->
       <!-- Modal Component -->
-      <b-modal id="modal1" title="Bootstrap-Vue">
-        <Login v-if="!$store.state.isAdmin"></Login>
-        <Suggest v-else></Suggest>
-      </b-modal>
+    <b-modal id="modal1" title="Suggest a Resource" :cancel-disabled="true"
+      :ok-disabled="true">
+      <Suggest></Suggest>
+      <div slot="modal-footer" class="w-100">
+      </div>
+    </b-modal>
     </div>
 	</header>
 
@@ -55,7 +56,6 @@
 
 <script>
 
-import Login from '@/components/Login.vue'
 import Suggest from '@/components/Suggest.vue'
 
 export default {
@@ -71,16 +71,10 @@ export default {
     }
   },
   components: {
-    Login,
     Suggest
   }
 }
 </script>
 
 <style scoped lang="scss">
-.logo-logo{}
-.mobile-logo{
-  position: absolute;
-  top: 5px;
-}
 </style>
