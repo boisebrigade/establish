@@ -75,10 +75,5 @@ export default {
       .then(response => (this.resources = response.data))
       .catch(error => (this.errors = error))
   }
-  // firestore () {
-  //   return {
-  //     resources: db.collection('resources')
-  //   }
-  // }
 }
 </script>
