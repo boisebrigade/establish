@@ -15,8 +15,8 @@
           </b-col>
           <b-col>
             <div>
-              {{resource.days_open}}
-              {{resource.times_open}}
+              {{resource.days}}
+              {{resource.hours}}
             </div>
           </b-col>
         </b-row>
