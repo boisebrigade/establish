@@ -23,29 +23,33 @@
 </template>
 
 <script>
-import { db } from '../main'
+import axios from 'axios';
 
 export default {
   data() {
     return {
-      categories: [],
-      categoryTitle: '',
+      categories: null,
+      title: '',
       image: '',
       errors: []
     }
   },
+  mounted () {
+    axios
+      .get('http://localhost:3000/categories')
+      .then(console.log('axios'))
+      .then(response => (this.categories = response.data))
+      .catch(error => (this.errors = error))
+    },
+
   // firestore () {
   //   return {
   //     categories: db.collection('categories')
   //   }
-  // },
   methods: {
-    listEntries (title) {
-      console.log(title)
-    },
     addCategory (entryTitle, image) {
       const createdAt = new Date()
-      db.collection('categories').add({ categoryTitle, image, createdAt })
+      db.collection('categories').add({ title, image, createdAt })
     },
     deleteCategory (id) {
       db.collection('categories').doc(id).delete()
