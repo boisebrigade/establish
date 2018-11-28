@@ -1,0 +1,8 @@
+curl -i -X POST -H "Content-Type: application/json" -d '{
+  "title": "Idaho Legal Aid",
+  "description": "Family law (divorce, custody & protection orders with domestic violence), & landlord- tenant problems, mortgage foreclosure issues.Based on income & type of problem. Walk-ins OK",
+  "add_info": "3 statewide toll free advice lines: Domestic Violence Legal Advice Line 1-877-500-2980, Fair Housing Legal Advice Line [1-866-345-0106], Senior Legal Hotline age 60+1-866-345-0106. Spanish line: 1-866-954-2591.",
+  "county": "Ada"
+   }' localhost:3000/resources
+
+"_id":"5bdfd7452101a63afc7ec4a7
