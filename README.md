@@ -7,7 +7,7 @@ Group email: boisebrigade@gmail.com
 ## Project Setup
 See the README's within each of the project's component folders.
 * [Establish]()
-* [The Self Rescue Manual]() 
+* [The Self Rescue Manual]()
 * [A shared backend]()
 
 ### Relevant Links
@@ -16,3 +16,8 @@ See the README's within each of the project's component folders.
 [Group Email](boisebrigade@gmail.com)  
 [Establish API](https://github.com/boisebrigade/establish-api)  
 [Establish App Dev Server](http://selfrescue.boisebrigade.org)
+
+###firebase
+storage
+hosting
+auth

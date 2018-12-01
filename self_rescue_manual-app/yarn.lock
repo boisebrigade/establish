@@ -8368,10 +8368,6 @@ vm-browserify@0.0.4:
   dependencies:
     indexof "0.0.1"
 
-vue-axios@^2.1.4:
-  version "2.1.4"
-  resolved "https://registry.yarnpkg.com/vue-axios/-/vue-axios-2.1.4.tgz#a9d298f7e876f9a87feb336b37adcbce34ff9f9f"
-
 vue-eslint-parser@^2.0.3:
   version "2.0.3"
   resolved "https://registry.yarnpkg.com/vue-eslint-parser/-/vue-eslint-parser-2.0.3.tgz#c268c96c6d94cfe3d938a5f7593959b0ca3360d1"
@@ -8404,10 +8400,6 @@ vue-loader@^15.4.2:
 vue-responsive@^1.0.2:
   version "1.0.2"
   resolved "https://registry.yarnpkg.com/vue-responsive/-/vue-responsive-1.0.2.tgz#abab1d03fa4b218b5f062779a1feed853f1880d0"
-
-vue-router@^3.0.1:
-  version "3.0.1"
-  resolved "https://registry.yarnpkg.com/vue-router/-/vue-router-3.0.1.tgz#d9b05ad9c7420ba0f626d6500d693e60092cc1e9"
 
 vue-scroll-to@^2.2.1:
   version "2.2.1"
