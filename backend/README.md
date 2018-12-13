@@ -1,7 +1,17 @@
-to develop locally, you'll need mongo db running and the config.env file set up correctly.\
+# Shared Backend
 
-then, just npm start :smiley:
+## Description
 
-contact us for help if need be.
-website: https://establish.boisebrigade.com
-email: boisebrigade+establish@gmail.com
+### Local Development
+
+You'll need mongo db running and the config.env file set up correctly.
+
+Then, just npm start. :smiley:
+
+Contact us for help if need be.
+Website: https://establish.boisebrigade.com
+Email: boisebrigade@gmail.com
+
+### Production Deployment
+
+Heroku
