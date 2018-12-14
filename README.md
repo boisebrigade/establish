@@ -1,23 +1,19 @@
 # Establish
 
-This repository contains the code that runs the front end of the Establish application used to support the [self rescue manual](http://www.selfrescuemanual.com/)
+This repository contains the code for all aspects of the Establish application including:
+* the [self rescue manual](http://www.selfrescuemanual.com/), a VueJS app
+* the [mobile app](), to be built with Flutter or as a VueJS PWA
+* the shared [backend](), an NodeJS API using MongoDB
+* the files for [the website]()
 
 Group email: boisebrigade@gmail.com
 
 ## Project Setup
-See the README's within each of the project's component folders.
-* [Establish]()
-* [The Self Rescue Manual]()
-* [A shared backend]()
+See the separate README's within each of the project's component folders.
 
 ### Relevant Links
-[Website](http://www.boisebrigade.org)  
-[Mockups](https://sketch.cloud/s/lKP8e/all/pages/landing-page-small-combined)  
+[Website](http://establish.boisebrigade.org)  
+[Mockups](https://www.figma.com/file/NeAhTfevJh3HddyceURedgsp/Establish-App?node-id=13%3A17)  
 [Group Email](boisebrigade@gmail.com)  
 [Establish API](https://github.com/boisebrigade/establish-api)  
 [Establish App Dev Server](http://selfrescue.boisebrigade.org)
-
-###firebase
-storage
-hosting
-auth
