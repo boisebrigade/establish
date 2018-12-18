@@ -5,9 +5,18 @@
   </div>
 </template>
 
-<script>
+<style lang="scss">
 
-export default {
-  name: 'admin',
-}
+</style>
+<script>
+  import components from '@/components/admin/'
+
+  export default {
+    name: 'app',
+    data () {
+      return {
+      }
+    },
+    components: components
+  }
 </script>
