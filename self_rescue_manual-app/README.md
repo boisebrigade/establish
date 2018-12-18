@@ -14,7 +14,7 @@ This repository contains the code the [self rescue manual](http://www.selfrescue
 * vue-cli
 * firebase-tools
 
-Firebase is used for image storage and user auth
+Firebase is used for hosting, image storage, and user auth
 
 #### Project setup
 ```

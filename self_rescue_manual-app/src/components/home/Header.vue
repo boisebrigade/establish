@@ -56,7 +56,7 @@
 
 <script>
 
-import Suggest from '@/components/Suggest.vue'
+import Suggest from './Suggest.vue'
 
 export default {
   name: 'Header',

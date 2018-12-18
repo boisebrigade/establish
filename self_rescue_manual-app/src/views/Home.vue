@@ -1,5 +1,5 @@
 <template>
-  <div id="home">
+  <div id="app">
     <div class="wrapper">
       <Header />
       <Hero />
@@ -11,24 +11,18 @@
   </div>
 </template>
 
+<style scoped lang="scss">
 
+</style>
 <script>
-import Header from '@/components/Header.vue'
-import Hero from '@/components/Hero.vue'
-import CategoryHeader from '@/components/CategoryHeader.vue'
-import Categories from '@/components/Categories.vue'
-import Directory from '@/components/Directory.vue'
-import Footer from '@/components/Footer.vue'
+  import components from '../components/home/'
 
-export default {
-  name: 'home',
-  components: {
-    Header,
-    Hero,
-    CategoryHeader,
-    Categories,
-    Directory,
-    Footer
+  export default {
+    name: 'app',
+    data () {
+      return {
+      }
+    },
+    components: components
   }
-}
 </script>

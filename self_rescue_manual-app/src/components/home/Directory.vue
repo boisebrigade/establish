@@ -35,7 +35,7 @@
   }
 </style>
 <script>
-import Resources from '@/components/Resources.vue'
+import Resources from './Resources.vue'
 
 export default {
   name: 'Directory',
