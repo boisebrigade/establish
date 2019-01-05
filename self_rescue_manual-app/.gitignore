@@ -19,4 +19,7 @@ yarn-error.log*
 *.njsproj
 *.sln
 *.sw*
+
+#firebase - all except firebase.json (for auth and hosting)
+.firebase*
 .firebase/*
