@@ -4,7 +4,7 @@ This repository contains the code for all aspects of the Establish application i
 * the [self rescue manual](http://www.selfrescuemanual.com/), a VueJS app
 * the [mobile app](), to be built with Flutter or as a VueJS PWA
 * the shared [backend](), an NodeJS API using MongoDB
-* the files for [the website]()
+
 
 Group email: boisebrigade@gmail.com
 
