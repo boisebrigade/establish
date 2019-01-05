@@ -1,72 +1,85 @@
 <template>
-  <div class="section__content" v-if="entries && entries.length">
-    <div v-for="(entry, idx) in entries" :key="idx">
-      <b-button v-if=$store.state.isAdmin @click="deleteEntry(entry.id)">Delete</b-button>
-      <h2>{{entry.title}}<br/>
-        <small>
-          <a :href="entry.weburl">{{entry.webtitle}}</a>
-        </small>
-      </h2>
-      <div class="infobox">
-        <div class="infobox__aside" v-for="tel in entry.tels">
-          <a href="tel:{{entry.tel.number}}" TODO: add method/funtion to remove dashes etc... >
-            {{entry.tel.number}}<br/><span>{{entry.tel.type}}</span>
-          </a>
-        </div>
-        <div class="infobox__content" v-for="time in entry.times">
-          {{entry.time.days}}
-          {{entry.time.hours}}
-        </div>
-      </div>
-      <p>{{entry.description}}</p>
-      <p>{{entry.addInfo}}</p>
-    </div>
-    <aside class="section__aside">
-      <div class="map-outer">
-        <div class="map"> v-for="map in entry.maps">
-          <iframe :src="entry.map.maptile" width="320" height="175" frameborder="0" style="border:0" allowfullscreen></iframe>
-        </div>
-        <address class="map__address">
-          <a :href="entry.map.address">
-            {{entry.map.street}}<br/>
-            {{entry.map.city}}, {{entry.map.state}} {{entry.map.zip}}
-          </a>
-        </address>
-      </div>
-    </aside>
+  <div>
+  <b-btn v-if="!$store.state.isUser" @click="$store.state.isUser = true">Login</b-btn>
+  <div v-if="$store.state.isUser">
+    <b-form @submit="onSubmit" @reset="onReset">
+      <b-form-group id="exampleInputGroup1"
+                    label="Email address:"
+                    label-for="exampleInput1"
+                    description="We'll never share your email with anyone else.">
+        <b-form-input id="exampleInput1"
+                      type="email"
+                      v-model="form.email"
+                      required
+                      placeholder="Enter email">
+        </b-form-input>
+      </b-form-group>
+      <b-form-group id="exampleInputGroup2"
+                    label="Your Name:"
+                    label-for="exampleInput2">
+        <b-form-input id="exampleInput2"
+                      type="text"
+                      v-model="form.name"
+                      required
+                      placeholder="Enter name">
+        </b-form-input>
+      </b-form-group>
+      <b-form-group id="exampleInputGroup3"
+                    label="Food:"
+                    label-for="exampleInput3">
+        <b-form-select id="exampleInput3"
+                      :options="foods"
+                      required
+                      v-model="form.food">
+        </b-form-select>
+      </b-form-group>
+      <b-form-group id="exampleGroup4">
+        <b-form-checkbox-group v-model="form.checked" id="exampleChecks">
+          <b-form-checkbox value="me">Check me out</b-form-checkbox>
+          <b-form-checkbox value="that">Check that out</b-form-checkbox>
+        </b-form-checkbox-group>
+      </b-form-group>
+      <b-button type="submit" variant="primary">Submit</b-button>
+      <b-button type="reset" variant="danger">Reset</b-button>
+    </b-form>
   </div>
-  <div class="section__content" v-else-if="errors && errrors.length">
-    <ul>
-      <li v-for="error of errors">
-        {{error.message}}
-      </li>
-    </ul>
-  </div>
+</div>
 </template>
 
 <script>
-import { db } from '../../main'
-
-export default {
-  data() {
-    return {
-      entries: [{
-        tels:[],
-        hours:[],
-        maps:[]
-      }],
-      errors: []
-    }
-  },
-  firestore () {
-    return {
-      entries: db.collection('entries')
-    }
-  },
-  methods: {
-    deleteEntry (id) {
-      db.collection('entries').doc(id).delete()
+  export default {
+    name: 'EditResource',
+    data () {
+      return {
+        form: {
+          email: '',
+          name: '',
+          food: null,
+          checked: []
+        },
+        foods: [
+          { text: 'Select One', value: null },
+          'Carrots', 'Beans', 'Tomatoes', 'Corn'
+        ],
+        show: true
+      }
+    },
+    methods: {
+      onSubmit (evt) {
+        evt.preventDefault();
+        alert(JSON.stringify(this.form));
+      },
+      onReset (evt) {
+        evt.preventDefault();
+        /* Reset our form values */
+        this.form.email = '';
+        this.form.name = '';
+        this.form.food = null;
+        this.form.checked = [];
+        /* Trick to reset/clear native browser form validation state */
+        this.show = false;
+        this.$nextTick(() => { this.show = true });
+      }
     }
   }
-}
 </script>

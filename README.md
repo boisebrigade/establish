@@ -12,8 +12,11 @@ Group email: boisebrigade@gmail.com
 See the separate README's within each of the project's component folders.
 
 ### Relevant Links
-[Website](http://establish.boisebrigade.org)  
-[Mockups](https://www.figma.com/file/NeAhTfevJh3HddyceURedgsp/Establish-App?node-id=13%3A17)  
-[Group Email](boisebrigade@gmail.com)  
+[Establish Website](http://establish.boisebrigade.org)  
+[SelfRescue Website](http://selfrescue.boisebrigade.org)
 [Establish API](https://github.com/boisebrigade/establish-api)  
-[Establish App Dev Server](http://selfrescue.boisebrigade.org)
+
+[Group Email](boisebrigade@gmail.com)  
+
+[Establish Mockups](https://www.figma.com/file/NeAhTfevJh3HddyceURedgsp/Establish-App?node-id=13%3A17)  
+[SelfRescue Mockups](https://sketch.cloud/s/lKP8e/yEj5bK)  

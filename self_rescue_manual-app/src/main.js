@@ -1,16 +1,17 @@
 import Vue from 'vue'
 import App from './App.vue'
+import BootstrapVue from 'bootstrap-vue'
+import VueScrollTo from 'vue-scrollto'
 import './registerServiceWorker'
 import store from './store'
 import router from './router';
-import BootstrapVue from 'bootstrap-vue'
-import VueScrollTo from 'vue-scrollto'
 import responsive from 'vue-responsive'
+import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 import { library } from '@fortawesome/fontawesome-svg-core'
 import { faSearch } from '@fortawesome/free-solid-svg-icons'
-import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
-import axios from 'axios'
 library.add(faSearch)
+import axios from 'axios'
+import '@/firebase/';
 
 Vue.component('font-awesome-icon', FontAwesomeIcon)
 
