@@ -8,7 +8,7 @@
 				</div>
         <div class="header__content">
 
-          <a href="#" v-on:click="toggleActive" class="burger-menu" v-bind:class="{ active: isActive }" v-responsive.sm.xs >
+          <a href="#" v-on:click="toggleBurgerActive" class="burger-menu" v-bind:class="{ active: burgerActive }" v-responsive.sm.xs >
             <span></span>
             <span></span>
             <span></span>
@@ -62,12 +62,12 @@ export default {
   name: 'Header',
   data() {
     return {
-      isActive: false
+      burgerActive: false
     }
   },
   methods: {
-    toggleActive: function() {
-      this.isActive = ! this.isActive
+    toggleBurgerActive: function() {
+      this.burgerActive = ! this.burgerActive
     }
   },
   components: {
@@ -77,4 +77,5 @@ export default {
 </script>
 
 <style scoped lang="scss">
+
 </style>

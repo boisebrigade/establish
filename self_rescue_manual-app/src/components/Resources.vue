@@ -70,7 +70,6 @@ export default {
   },
   mounted () {
     axios
-      // .get('https://api.coindesk.com/v1/bpi/currentprice.json')
       .get('http://localhost:3000/resources')
       .then(response => (this.resources = response.data))
       .catch(error => (this.errors = error))

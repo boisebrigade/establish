@@ -1,7 +1,5 @@
 <template>
-  <div>
-  <b-btn v-if="!$store.state.isUser" @click="$store.state.isUser = true">Login</b-btn>
-  <div v-if="$store.state.isUser">
+  <div id='add'>
     <b-form @submit="onSubmit" @reset="onReset">
       <b-form-group id="exampleInputGroup1"
                     label="Email address:"
@@ -11,7 +9,7 @@
                       type="email"
                       v-model="form.email"
                       required
-                      placeholder="Enter email">
+                      placeholder="Enter butts">
         </b-form-input>
       </b-form-group>
       <b-form-group id="exampleInputGroup2"
@@ -43,12 +41,12 @@
       <b-button type="reset" variant="danger">Reset</b-button>
     </b-form>
   </div>
-</div>
 </template>
 
 <script>
+  import axios from 'axios';
   export default {
-    name: 'EditResource',
+    name: 'AddResource',
     data () {
       return {
         form: {
@@ -83,3 +81,9 @@
     }
   }
 </script>
+
+<style scoped lang="scss">
+ div #add {
+   margin-top: 2rem;
+ }
+</style>
