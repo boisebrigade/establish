@@ -3,44 +3,46 @@
   <b-btn v-if="!$store.state.isUser" @click="$store.state.isUser = true">Login</b-btn>
   <div v-if="$store.state.isUser">
     <b-form @submit="onSubmit" @reset="onReset">
-      <b-form-group id="exampleInputGroup1"
+      <b-form-group id="InputGroup1"
                     label="Email address:"
-                    label-for="exampleInput1"
-                    description="We'll never share your email with anyone else.">
-        <b-form-input id="exampleInput1"
+                    label-for="Input1"
+                    description="">
+        <b-form-input id="email"
                       type="email"
                       v-model="form.email"
                       required
                       placeholder="Enter email">
         </b-form-input>
       </b-form-group>
-      <b-form-group id="exampleInputGroup2"
+      <b-form-group id="InputGroup2"
                     label="Your Name:"
-                    label-for="exampleInput2">
-        <b-form-input id="exampleInput2"
+                    label-for="Input2">
+        <b-form-input id="name"
                       type="text"
                       v-model="form.name"
                       required
                       placeholder="Enter name">
         </b-form-input>
       </b-form-group>
-      <b-form-group id="exampleInputGroup3"
-                    label="Food:"
-                    label-for="exampleInput3">
-        <b-form-select id="exampleInput3"
-                      :options="foods"
-                      required
-                      v-model="form.food">
-        </b-form-select>
+      <b-form-group id="InputGroup3"
+        label="Details:"
+        label-for="Input3">
+        <b-form-textarea id="details"
+          type="text"
+          v-model="form.details"
+          required
+          :rows="3" onloadedmetadata=""
+          placeholder="Please list any errors you've found on a resource here, or the contact information for a resource we've missed">
+        </b-form-textarea>
       </b-form-group>
-      <b-form-group id="exampleGroup4">
-        <b-form-checkbox-group v-model="form.checked" id="exampleChecks">
-          <b-form-checkbox value="me">Check me out</b-form-checkbox>
-          <b-form-checkbox value="that">Check that out</b-form-checkbox>
+      <b-form-group id="checkgroup">
+        <b-form-checkbox-group v-model="form.checked" id="checks">
+          <b-form-checkbox value="work">I work or volunteer for this suggestion</b-form-checkbox>
+          <b-form-checkbox value="contact">Please add my contact info to your newsletter</b-form-checkbox>
         </b-form-checkbox-group>
       </b-form-group>
-      <b-button type="submit" variant="primary">Submit</b-button>
-      <b-button type="reset" variant="danger">Reset</b-button>
+      <b-button class="submit" type="submit" variant="primary">Submit</b-button>
+      <b-button class="reset" type="reset" variant="danger">Reset</b-button>
     </b-form>
   </div>
 </div>
@@ -48,7 +50,7 @@
 
 <script>
   export default {
-    name: 'AddResource',
+    name: 'Suggest',
     data () {
       return {
         form: {
@@ -57,10 +59,6 @@
           food: null,
           checked: []
         },
-        foods: [
-          { text: 'Select One', value: null },
-          'Carrots', 'Beans', 'Tomatoes', 'Corn'
-        ],
         show: true
       }
     },
@@ -83,3 +81,15 @@
     }
   }
 </script>
+
+<style scoped>
+
+    #checkgroup {
+     text-align: left;
+   }
+
+   .submit, .reset {
+     margin: 1em;
+   }
+
+</style>

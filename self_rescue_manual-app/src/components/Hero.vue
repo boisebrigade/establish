@@ -42,8 +42,8 @@
 </style>
 
 <script>
-import { db } from '../../main'
-import { results } from '../../main'
+import { db } from '../main'
+import { results } from '../main'
 
 export default {
   name: 'Hero',
@@ -55,18 +55,7 @@ export default {
         category: null
       }
     },
-    firestore () {
-      return {
-        entries: db.collection('entries'),
-        categories: db.collection('categories')
-
-      }
-    },
     methods: {
-      listEntries(){
-        console.log(this.county);
-        console.log(this.category);
-      }
     }
   }
 </script>

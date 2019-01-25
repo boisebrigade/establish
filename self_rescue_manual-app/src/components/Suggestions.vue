@@ -1,22 +1,14 @@
 <template>
-  <div>
-    <Header />
-    <Hero />
-    <CategoryHeader />
-    <Categories />
-    <Directory />
-    <Footer />
+  <div id="suggestions">
+  {suggestions}
   </div>
 </template>
 
-<style scoped lang="scss">
-
-</style>
 <script>
   import components from '../components/'
 
   export default {
-    name: 'home',
+    name: 'Suggestions',
     data () {
       return {
       }
@@ -24,3 +16,9 @@
     components: components
   }
 </script>
+
+<style scoped lang="scss">
+ div #suggestions {
+   margin: 5rem;
+ }
+</style>
