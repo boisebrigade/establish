@@ -1,0 +1,251 @@
+a{
+  text-decoration: none;
+  color: inherit;
+}
+
+button{
+  margin: auto;
+}
+
+/* ================ LANDING SCREEN ==================== */
+
+.card{
+  background-color:#005885;
+  box-shadow: 0px 8px 8px rgba(0, 0, 0, 0.2) inset;
+  display:grid;
+  font-size: 24px;
+  grid-template-columns: 1fr 2.5fr;
+}
+
+.card:nth-of-type(6n+1){
+  background: #004161;
+}
+
+.card:nth-of-type(6n+2),.card:nth-of-type(6n+6){
+  background: #005885;
+}
+
+.card:nth-of-type(6n+3),.card:nth-of-type(6n+5){
+  background: #006699;
+}
+
+.card:nth-of-type(6n+4){
+  background: #007AB8;
+}  
+
+.category{
+  color: rgba(255, 255, 255, 0.85);
+  padding: 18px 0 23px 0;
+}
+
+.firstCard{
+  margin-top: 64px;
+}
+
+.header {
+  background-color:#001925;
+  height: 64px;
+  top: 0px;
+  padding: 0;
+}
+
+.icons{
+  height: 85px;
+  margin: 9px 12px 6px 10px;
+  width: 85px;
+}
+
+.ideas{
+  color: rgba(255, 255, 255, 0.85);
+  font-size: 16px;
+  margin-top: 4px;
+}
+
+.lastCard{
+  padding-bottom: 49px;
+}
+
+.navbar{
+  position: fixed;
+  right: 0;
+  left: 0;
+  z-index: 999;
+}
+
+.search{
+  color: rgba(255,255,255,0.85);
+  display: grid;
+  grid-template-columns: .1fr 15fr;
+  background: rgba(255, 255, 255, 0.1); /*changed to .1 cuz .5 was too white*/
+  background-blend-mode: overlay;
+  border: none;
+  border-radius: 10px;
+  height: 36px;
+  margin: 24px 8px 4px 8px;
+  width: 359px;
+}
+
+.searchIcon{
+  height: 20px;
+  margin: 8px 4px 8px 10px;
+  transform: scaleX(-1);
+  -webkit-transform: scaleX(-1);
+  width: 20px;
+}
+
+.searchInput{
+  background: rgba(0, 0, 0, 0);
+  border: none;
+  color: rgba(255, 255, 255, 0.85);
+  display: grid;
+  font-size: 17px;
+  grid-template-columns: .1fr 15fr;
+  height: 36px;
+  letter-spacing: -0.0241176em;
+  padding: 0;
+}
+
+
+/* ================ FOOTER ==================== */
+
+.footer{
+  display: flex;
+  flex-wrap: nowrap;
+  overflow: hidden;
+  background-color:#001925;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  padding: 4px 0;
+  height:49px;
+}
+
+.footerIcon{
+  width: 30px;
+  height: 26px;
+}
+
+.footerNav{
+  flex-grow: 1;
+  font-family: "SF Pro Text";
+  font-size: 10px;
+  text-align: center;
+  letter-spacing: 0.012em;
+}
+
+.activeNav{
+  color: #16DBD5;
+}
+
+/* ================ LIST SCREEN ==================== */
+
+.gotoPage{
+  position: absolute;
+  right: 0;
+  transform: scaleX(-1);
+  -webkit-transform: scaleX(-1);
+  margin-top: 4px;
+}
+
+.listScreen{
+  padding-bottom:49px;
+}
+
+.resources{
+  border-bottom: 1px solid white;
+  margin-left: 27px;
+  color: rgba(255, 255, 255, 0.85);
+  font-family: "NotoSans-SemiCondensed";
+  font-size: 18px;
+  min-height: 44px;
+  letter-spacing: -0.0241176em;
+  display: grid;
+  align-items: center;
+}
+
+.resourceList{
+  display:grid;
+}
+
+.subcategories{
+  border-bottom: 1px solid white;
+  color: #56CBF9;
+  font-size: 20px;
+  min-height: 44px;
+  letter-spacing: -0.0241176em; 
+  margin-left: 27px;
+  display: grid;
+  align-content: center;
+}
+
+.subcategoryList{
+  padding-bottom: 21px;
+  display: grid;
+  align-items: center;
+}
+
+.title{
+  position: fixed;
+  left: calc(50% - 67px/2 - 1px);
+  top: 11px;
+  font-family: "SF Pro Text";
+  font-size: 17px;
+  letter-spacing: -0.0241176em;
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.titleBar {
+  background-color:#001925;
+  min-height: 44px;
+}
+
+.topPadding{
+  padding-top:64px;
+}
+
+/* ================ RESOURCE SCREEN ==================== */
+.resourcePage{
+  margin: 0 27px;
+  padding-top: 54px;
+  font-family:"NotoSans-SemiCondensedLight";
+}
+
+.resourceTitle{
+  font-family: "NotoSans-SemiCondensedMedium";
+  min-height: 79px;
+  line-height: 39px;
+  font-size: 32px;
+  padding: 10px 0;
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.address{
+  height: 20px;
+  line-height: 20px;
+  font-size: 16px;
+  padding: 10px 0;
+  color: #16DBD5;
+}
+
+.phone{
+  left: 27px;
+  line-height: 29px;
+  font-size: 24px;
+  padding: 10px 0;
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.urls{
+  width: 81px;
+  line-height: 29px;
+  font-size: 24px;
+  padding: 10px 0;
+  color: #16DBD5;
+}
+
+.description{
+  height: 271px;
+  font-size: 18px;
+  padding: 10px 0;
+  color: rgba(255, 255, 255, 0.85);
+}

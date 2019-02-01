@@ -1,0 +1,35 @@
+body{
+  font-family: "NotoSans-SemiCondensed";
+  background: #002334;
+  color: white;
+  margin: 0px;
+}
+
+::placeholder {
+  color: rgba(255,255,255,0.85);
+  font-family: "SF-Pro-Text-Regular";
+}
+
+@font-face {
+  font-family: "NotoSans-SemiCondensed";
+  src: url("/fonts/NotoSans-SemiCondensed.ttf");
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "NotoSans-SemiCondensedLight";
+  src: url("/fonts/NotoSans-SemiCondensedLight.ttf");
+  font-style: light;
+}
+
+@font-face {
+  font-family: "NotoSans-SemiCondensedMedium";
+  src: url("/fonts/NotoSans-SemiCondensedMedium.ttf");
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "SF-Pro-Text-Regular";
+  src: url("/fonts/SF-Pro-Text-Regular.otf");
+  font-style: normal;
+}
