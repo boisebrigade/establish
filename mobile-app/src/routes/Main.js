@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 import categories from '../categories.json';
+import { getCategories } from '../Contentful';
 
 import '../App.css';
 
@@ -24,7 +25,7 @@ const Categories = props => props.categories.map((category, i, categories) => {
     }
     return (
         <Link to={`/category/${category.name}`} className={className} key={i}>
-            <img className="icons" src={`icons/${category.icon}`} alt={category.icon}></img>
+            <img className="icons" src={`${category.icon}`} alt={category.icon}></img>
             <div className="category">
                 <div >
                     {category.name}
@@ -44,6 +45,11 @@ class Main extends React.Component {
         this.state = {
             filteredCategories: categories
         };
+    }
+
+    async componentDidMount() {
+        const categories = await getCategories();
+        this.setState({ filteredCategories: categories });
     }
 
     handleChange = event => this.setState({
