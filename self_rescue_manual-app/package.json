@@ -19,6 +19,7 @@
     "nodemon": "^1.18.9",
     "register-service-worker": "^1.0.0",
     "vue": "^2.5.17",
+    "vue-bootstrap-datetimepicker": "^5.0.1",
     "vue-responsive": "^1.0.2",
     "vue-router": "^3.0.2",
     "vue-scrollto": "^2.13.0",

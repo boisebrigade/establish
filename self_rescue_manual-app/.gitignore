@@ -23,3 +23,6 @@ yarn-error.log*
 #firebase - all except firebase.json (for auth and hosting)
 .firebase*
 .firebase/*
+
+# data files
+data.json

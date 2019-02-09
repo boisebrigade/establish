@@ -5,9 +5,9 @@
       <AdminHeader v-on:toggleview="onToggleView" />
       <AdminHero />
       <div class="container">
-        <AddResource v-show="addIsActive" />
-        <EditResource v-show="editIsActive"/>
-        <Suggestions v-show="suggestIsActive"/>
+        <AddResource v-if="addIsActive" />
+        <EditResource v-if="editIsActive"/>
+        <Suggestions v-if="suggestIsActive"/>
       </div>
       <Footer />
     </div>
@@ -24,6 +24,7 @@
   #login{
     margin-top: 5rem
   }
+
 </style>
 
 <script>

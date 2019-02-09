@@ -20,7 +20,7 @@
                 <button class="btn btn-secondary" v-on:click="$emit('toggleview, edit')">Edit Resources</button>
               </li>
               <li>
-                <button class="btn btn-secondary" v-on:click="$emit('toggleview, suggest')">Suggestions</button>
+                <button class="btn btn-secondary" v-on:click="$emit('toggleview, suggest')">Review Suggestions</button>
               </li>
             </ul>
           </a>
@@ -34,7 +34,7 @@
                 <button class="btn btn-secondary" v-on:click="$emit('toggleview', 'edit')">Edit Resources</button>
               </li>
               <li>
-                <button class="btn btn-secondary" v-on:click="$emit('toggleview', 'suggest')">Suggestions</button>
+                <button class="btn btn-secondary" v-on:click="$emit('toggleview', 'suggest')">Review Suggestions</button>
               </li>
             </ul>
             <span class="nav__overlay"></span>

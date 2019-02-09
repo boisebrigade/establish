@@ -4,7 +4,7 @@ import Vuex from 'vuex'
 Vue.use(Vuex)
 
 const state = {
-  isAdmin: false,
+  isAdmin: true,
   isUser: true
 }
 
