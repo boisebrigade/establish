@@ -18,4 +18,8 @@
     text-align: center;
     color: #2c3e50;
   }
+
+  .btn {
+    min-height: 3rem;
+  }
 </style>

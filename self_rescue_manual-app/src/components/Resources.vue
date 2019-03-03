@@ -59,21 +59,14 @@
 </style>
 
 <script>
-import axios from 'axios';
+
 export default {
   name: 'Resources',
   data() {
     return {
-      resources: null,
+      resources: this.$store.state.resources,
       errors: null,
     }
-  },
-  mounted () {
-    axios
-      // .get('https://api.coindesk.com/v1/bpi/currentprice.json')
-      .get('http://localhost:3000/resources')
-      .then(response => (this.resources = response.data))
-      .catch(error => (this.errors = error))
   }
 }
 </script>

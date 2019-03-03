@@ -8,19 +8,19 @@
 				</div>
         <div class="header__content">
 
-          <a href="#" v-on:click="toggleActive" class="burger-menu" v-bind:class="{ active: isActive }" v-responsive.sm.xs >
+          <a href="#" v-on:click="toggleBurgerActive" class="burger-menu" v-bind:class="{ active: burgerIsActive }" v-responsive.sm.xs >
             <span></span>
             <span></span>
             <span></span>
             <ul>
               <li>
-                <b-button href="#" class="btn">Download Ada County</b-button>
+                <button class="btn btn-secondary" v-on:click="$emit('toggleview, add')">Add Resources</button>
               </li>
               <li>
-                <b-button href="#" class="btn">Download Canyon County</b-button>
+                <button class="btn btn-secondary" v-on:click="$emit('toggleview, edit')">Edit Resources</button>
               </li>
               <li>
-                <b-btn v-b-modal.modal1 href="#" class="">Suggest Resource</b-btn>
+                <button class="btn btn-secondary" v-on:click="$emit('toggleview, suggest')">Review Suggestions</button>
               </li>
             </ul>
           </a>
@@ -28,13 +28,13 @@
           <nav class="nav" v-responsive.md.lg.xl>
             <ul>
               <li>
-                <b-button href="#" class="btn">Download Ada County</b-button>
+                <button class="btn btn-secondary" v-on:click="$emit('toggleview', 'add')">Add Resources</button>
               </li>
               <li>
-                <b-button href="#" class="btn">Download Canyon County</b-button>
+                <button class="btn btn-secondary" v-on:click="$emit('toggleview', 'edit')">Edit Resources</button>
               </li>
               <li>
-                <b-btn v-b-modal.modal1 href="#" class="">Suggest Resource</b-btn>
+                <button class="btn btn-secondary" v-on:click="$emit('toggleview', 'suggest')">Review Suggestions</button>
               </li>
             </ul>
             <span class="nav__overlay"></span>
@@ -42,39 +42,27 @@
         </div><!-- /.header__content -->
       </div><!-- /.header__inner -->
     </div><!-- /.shell -->
-      <!-- Modal Component -->
-    <b-modal id="modal1" title="Suggest a Resource" :cancel-disabled="true"
-      :ok-disabled="true">
-      <Suggest></Suggest>
-      <div slot="modal-footer" class="w-100">
-      </div>
-    </b-modal>
-    </div>
 	</header>
-
 </template>
 
 <script>
 
-import Suggest from './Suggest.vue'
-
 export default {
-  name: 'Header',
+  name: 'AdminHeader',
   data() {
     return {
-      isActive: false
+      burgerIsActive: false,
     }
   },
-  methods: {
-    toggleActive: function() {
-      this.isActive = ! this.isActive
+  methods:{
+    toggleBurgerActive: function(){
+      this.burgerIsActive = !this.burgerIsActive
+      console.log('burger')
     }
-  },
-  components: {
-    Suggest
   }
 }
 </script>
 
 <style scoped lang="scss">
+ button {margin:0;}
 </style>
