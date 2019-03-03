@@ -2,11 +2,9 @@
 
 This repository contains the code for all aspects of the Establish application including:
 * the [self rescue manual](http://www.selfrescuemanual.com/), a VueJS app
-* the [mobile app](), to be built with Flutter or as a VueJS PWA
-* the shared [backend](), an NodeJS API using MongoDB
+* the [establish](), a React-based PWA. 
 
-
-Group email: boisebrigade@gmail.com
+* Contentful is currently being used as a 'backend-as-a-service' (BAAS) for both apps.
 
 ## Project Setup
 See the separate README's within each of the project's component folders.
@@ -14,7 +12,6 @@ See the separate README's within each of the project's component folders.
 ### Relevant Links
 [Establish Website](http://establish.boisebrigade.org)  
 [SelfRescue Website](http://selfrescue.boisebrigade.org)
-[Establish API](https://github.com/boisebrigade/establish-api)  
 
 [Group Email](boisebrigade@gmail.com)  
 

@@ -42,8 +42,6 @@
 </style>
 
 <script>
-import { db } from '../main'
-import { results } from '../main'
 
 export default {
   name: 'Hero',

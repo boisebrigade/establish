@@ -5,7 +5,9 @@ Vue.use(Vuex)
 
 const state = {
   isAdmin: true,
-  isUser: true
+  isUser: true,
+  categories: null,
+  resources: null
 }
 
 const mutations = {
@@ -20,7 +22,5 @@ const mutations = {
 export default new Vuex.Store({
   state,
   mutations,
-  actions: {
-
-  }
+  actions: {}
 })

@@ -13,43 +13,14 @@
         </a>
       </li>
     </ul>
-
-    <ul>
-      <li v-for="error of errors">
-        {{error.message}}
-      </li>
-    </ul>
   </div>
 </template>
 
 <script>
-import axios from 'axios';
-
 export default {
   data() {
     return {
-      categories: null,
-      errors: []
-    }
-  },
-  mounted () {
-    axios
-      .get('http://localhost:3000/categories')
-      .then(response => (this.categories = response.data))
-      .catch(error => (this.errors = error))
-    },
-
-  // firestore () {
-  //   return {
-  //     categories: db.collection('categories')
-  //   }
-  methods: {
-    addCategory (entryTitle, image) {
-      const createdAt = new Date()
-      db.collection('categories').add({ title, image, createdAt })
-    },
-    deleteCategory (id) {
-      db.collection('categories').doc(id).delete()
+      categories: this.$store.state.categories
     }
   }
 }
