@@ -22,16 +22,14 @@
     },
     components: components,
     mounted(){
-      client.getContentType('category')
-      .then(categories => {
-        this.$store.state.categories = categories
+      client.getEntries()
+      .then(response => {
+        response.items.forEach(item => {
+            item.fields.icon ? this.$store.state.categories.push(item) : this.$store.state.resources.push(item)
+        })
+        console.log(response.items)
       })
       .catch(console.error)
-      client.getContentType('resource')
-      .then(resources => {
-        this.$store.state.resources = resources
-      })
-      .catch(console.error)
-    },
+    }
   }
 </script>

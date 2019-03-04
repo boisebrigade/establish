@@ -6,8 +6,8 @@ Vue.use(Vuex)
 const state = {
   isAdmin: true,
   isUser: true,
-  categories: null,
-  resources: null
+  categories: [],
+  resources: []
 }
 
 const mutations = {
