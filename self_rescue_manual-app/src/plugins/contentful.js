@@ -9,4 +9,5 @@ module.exports = {
   createClient () {
     return contentful.createClient(config)
   }
+
 }

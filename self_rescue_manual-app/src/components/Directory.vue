@@ -5,21 +5,19 @@
         <hr/>
 				<div class="section__top">
 					<ul class="breadcrumbs">
-						<li><a href="#">Ada County</a></li>
-						<li><a href="#">Categories</a></li>
-						<li><a href="#">Legal Assistance &amp; Refugee Agencies</a></li>
+            <li v-if="this.$store.state.selectedCounty.length >= 1 ">County</li>
+            <li v-if="this.$store.state.selectedCounty">{{this.$store.state.selctedCounty}}</li>
+						<li v-if="this.$store.state.selectedCategories.length >= 1">Categories</li>
+						<li v-if="this.$store.state.selectedCategories.length >=1 ">{{this.$store.state.selectedCategories}}</li>
 					</ul>
-					<ul class="list-checkboxes"  id="results">
-						<li>
+					<ul class="list-checkboxes"  id="results" >
+            <li v-for="county in counties">
 							<div class="checkbox">
-								<input type="checkbox" name="field-11#" id="field-11#">
-								<label for="field-11#">Ada County</label>
-							</div>
-						</li>
-						<li>
-							<div class="checkbox">
-								<input type="checkbox" name="field-12#" id="field-12#">
-								<label for="field-12#">Canyon County</label>
+								<input type="checkbox"
+                :name="county.field.title"
+                :id="county.field.title"
+                :value="county.field.title">
+								<label :for="county.field.title">{{county.field.title}}</label>
 							</div>
 						</li>
 					</ul>
@@ -32,6 +30,8 @@
 <style>
   .breadcrumbs, .list-checkboxes {
     text-align :left;
+  	color: #9B9B9B;
+  	margin-bottom: 20px;
   }
 </style>
 <script>
@@ -44,6 +44,11 @@ export default {
   },
   components:{
     Resources
+  },
+  data(){
+    return {
+        counties: this.$store.state.counties
+    }
   }
 }
 </script>

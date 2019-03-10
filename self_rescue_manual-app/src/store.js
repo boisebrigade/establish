@@ -6,8 +6,12 @@ Vue.use(Vuex)
 const state = {
   isAdmin: true,
   isUser: true,
+  entries:[],
   categories: [],
-  resources: []
+  resources: [],
+  counties:[],
+  selectedCategories: ["Health"],
+  selectedCounty: "Ada"
 }
 
 const mutations = {

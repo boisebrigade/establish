@@ -24,12 +24,18 @@
     mounted(){
       client.getEntries()
       .then(response => {
+        console.log(response)
         response.items.forEach(item => {
-            item.fields.icon ? this.$store.state.categories.push(item) : this.$store.state.resources.push(item)
-        })
-        console.log(response.items)
+            if (item.fields.resource) {
+              this.$store.state.resources.push(item)
+            } else if (item.fields.icon) {
+              this.$store.state.categories.push(item)
+            } else if (item.fields.county) {
+              this.$store.state.counties.push(item)
+            } else {console.log(item)}
+          })
+          .catch(console.error)
       })
-      .catch(console.error)
     }
   }
 </script>
