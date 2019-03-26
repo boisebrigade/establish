@@ -21,6 +21,7 @@
     "test": "NODE_ENV=test && react-scripts test --env=jsdom"
   },
   "dependencies": {
+    "contentful": "^7.1.0",
     "react": "^16.6.3",
     "react-dom": "^16.6.3",
     "react-router-dom": "^4.3.1",
