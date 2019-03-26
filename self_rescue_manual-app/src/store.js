@@ -4,8 +4,10 @@ import Vuex from 'vuex'
 Vue.use(Vuex)
 
 const state = {
-  isAdmin: false,
-  isUser: true
+  isAdmin: true,
+  isUser: true,
+  categories: [],
+  resources: []
 }
 
 const mutations = {
@@ -20,7 +22,5 @@ const mutations = {
 export default new Vuex.Store({
   state,
   mutations,
-  actions: {
-
-  }
+  actions: {}
 })

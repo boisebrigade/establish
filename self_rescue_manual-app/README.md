@@ -9,12 +9,15 @@ This repository contains the code the [self rescue manual](http://www.selfrescue
 [Establish App Dev Server](https://establish-rescuemanual.firebaseapp.com/)
 
 
-### To run this app for development you'll need the following packages installed in your dev environment:
-* node, npm, and yarn
-* vue-cli
-* firebase-tools
+## Dev env
 
-Firebase is used for hosting, image storage, and user auth
+This app uses the backend-as-a-service [contentful.com](https://www.contentful.com/) for content management.
+Contact the [Group Email](boisebrigade@gmail.com) for a .env file to access, or if forking this app, create your own account and load your own data following the schema in [this file](contentful.json)  
+
+### Hosting
+
+To use firebase for hosting, install firebase-tools cli, and issue `firebase deploy` command
+
 
 #### Project setup
 ```

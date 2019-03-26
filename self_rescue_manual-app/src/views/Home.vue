@@ -1,28 +1,35 @@
 <template>
-  <div id="app">
-    <div class="wrapper">
-      <Header />
-      <Hero />
-      <CategoryHeader />
-      <Categories />
-      <Directory />
-      <Footer />
-    </div>
+  <div>
+    <Header />
+    <Hero />
+    <CategoryHeader />
+    <Categories />
+    <Directory />
+    <Footer />
   </div>
 </template>
 
-<style scoped lang="scss">
-
-</style>
 <script>
-  import components from '../components/home/'
+  import components from '../components/'
+  import {createClient} from '../plugins/contentful.js'
+  const client = createClient()
 
   export default {
-    name: 'app',
+    name: 'home',
     data () {
       return {
       }
     },
-    components: components
+    components: components,
+    mounted(){
+      client.getEntries()
+      .then(response => {
+        response.items.forEach(item => {
+            item.fields.icon ? this.$store.state.categories.push(item) : this.$store.state.resources.push(item)
+        })
+        console.log(response.items)
+      })
+      .catch(console.error)
+    }
   }
 </script>
