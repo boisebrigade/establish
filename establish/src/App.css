@@ -31,7 +31,7 @@ button{
 
 .card:nth-of-type(6n+4){
   background: #007AB8;
-}  
+}
 
 .category{
   color: rgba(255, 255, 255, 0.85);
@@ -172,7 +172,7 @@ button{
   color: #56CBF9;
   font-size: 20px;
   min-height: 44px;
-  letter-spacing: -0.0241176em; 
+  letter-spacing: -0.0241176em;
   margin-left: 27px;
   display: grid;
   align-content: center;
