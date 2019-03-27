@@ -14,7 +14,6 @@ const App = props => {
             <Route exact path='/' component={Main} />
             <Route path='/category/:name' component={Category} />
             <Route path='/resource/:categoryName/:subcategoryName/:resourceName' component={Resource} />
-            <Redirect from="/" to="/home" />
         </Switch>
             <div className="footer">
                 {footer.map((navigation, n) => {
