@@ -10,7 +10,7 @@ const Resources = props => props.resources.map((resource, j) =>
             <div className="resources">
                 {resource.name}
             </div>
-            <img src="/icons/back.svg" alt={resource.name} className="gotoPage"></img>
+            <img src="/icons/back.svg" alt={resource.name} className="gotoPage" />
         </Link>
     </React.Fragment>
 );
@@ -22,7 +22,7 @@ const Subcategories = props => props.subcategories.map((subcategory, i) =>
                 {subcategory.name}
             </div>
             <div>
-                <Resources subcategory={subcategory} category={props.category} resources={subcategory.resources}></Resources>
+                <Resources subcategory={subcategory} category={props.category} resources={subcategory.resources} />
             </div>
         </div>
     </React.Fragment>
@@ -40,7 +40,7 @@ const Category = props => {
                     </div>
                 </div>
                 <div className="topPadding">
-                    <Subcategories category={category} subcategories={category.subcategories}></Subcategories>
+                    <Subcategories category={category} subcategories={category.subcategories} />
                 </div>
             </div>
         </React.Fragment>

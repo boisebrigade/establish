@@ -3,25 +3,25 @@
         "name": "Home",
         "icon": "Home.svg",
         "activeIcon": "actHome.svg",
-        "link": "home"
+        "href": "/"
     },
     {
         "name": "Favorites",
         "icon": "Favorites.svg",
         "activeIcon": "actFavorites.svg",
-        "link": "favorites"
+        "href": "/favorites"
     },
     {
         "name": "Notifications",
         "icon": "Notifications.svg",
         "activeIcon": "actNotifications.svg",
-        "link": "notifications"
+        "href": "/notifications"
     },
     {
         "name": "Settings",
         "icon": "Settings.svg",
         "activeIcon": "actSettings.svg",
-        "link": "settings"
+        "href": "/settings"
     }
 ]
 

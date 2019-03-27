@@ -25,7 +25,7 @@ const Categories = props => props.categories.map((category, i, categories) => {
     }
     return (
         <Link to={`/category/${category.name}`} className={className} key={i}>
-            <img className="icons" src={`${category.icon}`} alt={category.icon}></img>
+            <img className="icons" src={`${category.icon}`} alt={category.icon} />
             <div className="category">
                 <div >
                     {category.name}
@@ -58,15 +58,15 @@ class Main extends React.Component {
 
     render() {
         return (
-            <React.Fragment>
+            <>
                 <div className="header navbar">
                     <div className="search">
-                        <img src="icons/search.svg" className="searchIcon" alt="search"></img>
+                        <img src="icons/search.svg" className="searchIcon" alt="search" />
                         <input className="searchInput" placeholder="Search" onChange={this.handleChange} />
                     </div>
                 </div>
                 <Categories categories={this.state.filteredCategories} />
-            </React.Fragment>
+            </>
         )
     }
 }

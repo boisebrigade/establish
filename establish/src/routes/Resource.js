@@ -10,7 +10,7 @@ class Resource extends React.Component {
         const resource = subcategory.resources.find(resource => resource.name === this.props.match.params.resourceName);
 
         return (
-            <React.Fragment>
+            <>
                 <div className="listScreen">
                     <div className="titleBar navbar">
                         <div className="title">
@@ -32,13 +32,13 @@ class Resource extends React.Component {
                             <div>{resource.url}</div>
                             <div>{resource.link}</div>
                         </div>
-                        <hr></hr>
+                        <hr />
                         <div className="description">
                             {resource.description}
                         </div>
                     </div>
                 </div>
-            </React.Fragment>
+            </>
         )
     }
 }
