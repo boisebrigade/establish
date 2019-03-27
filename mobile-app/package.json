@@ -21,10 +21,16 @@
     "test": "NODE_ENV=test && react-scripts test --env=jsdom"
   },
   "dependencies": {
-    "contentful": "^7.1.0",
+    "contentful": "^7.5.0",
     "react": "^16.6.3",
     "react-dom": "^16.6.3",
     "react-router-dom": "^4.3.1",
-    "react-scripts": "1.1.4"
-  }
+    "react-scripts": "^2.1.8"
+  },
+  "browserslist": [
+    ">0.2%",
+    "not dead",
+    "not ie <= 11",
+    "not op_mini all"
+  ]
 }
