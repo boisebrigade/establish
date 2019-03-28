@@ -1,7 +1,7 @@
 import React from 'react';
 import { Switch, Route } from 'react-router-dom';
 
-import Footer from './components/footer'
+import Footer from './components/Footer'
 
 import Category from './routes/Category';
 import Resource from './routes/Resource';
