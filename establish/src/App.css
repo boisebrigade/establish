@@ -103,6 +103,7 @@ button{
   height: 36px;
   letter-spacing: -0.0241176em;
   padding: 0;
+  outline: none;
 }
 
 
