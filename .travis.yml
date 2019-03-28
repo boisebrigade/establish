@@ -13,5 +13,3 @@ deploy:
   skip_cleanup: true
   local_dir: public
   acl: public_read
-  on:
-    branch: master
