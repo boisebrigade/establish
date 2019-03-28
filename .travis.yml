@@ -1,0 +1,17 @@
+language: node_js
+node_js:
+  - 11.2.0
+cache: npm
+before_install:
+  - cd establish
+script: npm run build
+deploy:
+  provider: s3
+  access_key_id: $AWS_ACCESS_KEY
+  secret_access_key: $AWS_SECRET_KEY
+  bucket: "establish-pwa"
+  skip_cleanup: true
+  local_dir: public
+  acl: public_read
+  on:
+    branch: master
