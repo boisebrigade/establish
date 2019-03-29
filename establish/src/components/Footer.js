@@ -12,12 +12,12 @@ const Footer = () =>
       return (
         <React.Fragment key={n}>
           <div className={className}>
-            <img className="footerIcon" src={imgSrc} alt={navigation.icon} />
-            <div>
-              <Link to={navigation.href}>
-                {navigation.name}
-              </Link>
-            </div>
+            <Link to={navigation.href}>
+              <img className="footerIcon" src={imgSrc} alt={navigation.icon} />
+              <div>
+                  {navigation.name}
+              </div>
+            </Link>
           </div>
         </React.Fragment>
       )
