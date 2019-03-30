@@ -1,4 +1,7 @@
 # Establish
+[![Build Status](https://travis-ci.org/boisebrigade/establish.svg?branch=master)](https://travis-ci.org/boisebrigade/establish)
+
+Mobile Application for Idaho's New Americans.
 
 ## Development Setup
 

@@ -1,24 +1,24 @@
-import React from 'react';
-import { Switch, Route } from 'react-router-dom';
+import React from 'react'
+import { Switch, Route } from 'react-router-dom'
 
-import Footer from './components/Footer'
+import Home from './screens/Home'
+import Category from './screens/Category'
+import Resource from './screens/Resource'
 
-import Category from './routes/Category';
-import Resource from './routes/Resource';
-import Main from './routes/Main';
+import Favorites from './screens/Favorites'
+import Notifications from './screens/Notifications'
+import Settings from './screens/Settings'
 
-
-import './App.css';
-
-const App = props =>
-  <>
+const App = ({data}) => <>
     <Switch>
-      <Route exact path='/' component={Main} />
-      <Route path='/category/:name' component={Category} />
-      <Route path='/resource/:categoryName/:subcategoryName/:resourceName' component={Resource} />
-    </Switch>
+      <Route exact path='/' render={(props) => <Home {...props} data={data} />}/>
+      <Route path='/category/:categoryId/:categoryName' render={props => <Category {...props} data={data} />}/>
+      <Route path='/resource/:categoryId/:categoryName/:resourceId/:resourceName' render={props => <Resource {...props} data={data} />}/>
 
-    <Footer />
+      <Route path='/favorites' render={props => <Favorites {...props} data={data} />} />
+      <Route path='/notifications' render={Notifications} />
+      <Route path='/settings' render={Settings} />
+    </Switch>
   </>
 
 

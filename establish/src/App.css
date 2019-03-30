@@ -17,6 +17,15 @@ button{
   grid-template-columns: 1fr 2.5fr;
 }
 
+.card:first-of-type {
+  margin-top: 64px;
+}
+
+.card:last-of-type {
+  padding-bottom: 49px;
+}
+
+
 .card:nth-of-type(6n+1){
   background: #004161;
 }
@@ -35,11 +44,7 @@ button{
 
 .category{
   color: rgba(255, 255, 255, 0.85);
-  padding: 18px 0 23px 0;
-}
-
-.firstCard{
-  margin-top: 64px;
+  padding: 18px 30px 23px 0;
 }
 
 .header {
@@ -56,14 +61,10 @@ button{
   filter: brightness(0) invert(100%);
 }
 
-.ideas{
+.ideas {
   color: rgba(255, 255, 255, 0.85);
   font-size: 16px;
   margin-top: 4px;
-}
-
-.lastCard{
-  padding-bottom: 49px;
 }
 
 .navbar{
@@ -71,6 +72,18 @@ button{
   right: 0;
   left: 0;
   z-index: 999;
+  display: flex;
+  align-items: center;
+}
+
+.ml-3 {
+  margin-left: 15px;
+}
+
+.back {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .search{
@@ -82,8 +95,7 @@ button{
   border: none;
   border-radius: 10px;
   height: 36px;
-  margin: 24px 8px 4px 8px;
-  width: 359px;
+  margin: 20px 8px 4px 8px;
 }
 
 .searchIcon{
