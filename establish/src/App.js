@@ -9,7 +9,7 @@ import Favorites from './screens/Favorites'
 import Notifications from './screens/Notifications'
 import Settings from './screens/Settings'
 
-const App = ({data}) => <div className='flex flex-column h-100'>
+const App = ({data}) => <div className='flex flex-column h-100 w-100 fixed'>
     <Switch>
       <Route exact path='/' render={(props) => <Home {...props} data={data} />}/>
       <Route path='/category/:categoryId/:categoryName' render={props => <Category {...props} data={data} />}/>
