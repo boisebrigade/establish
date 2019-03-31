@@ -80,7 +80,6 @@ button{
 
 .back {
   display: flex;
-  justify-content: center;
   align-items: center;
 }
 
@@ -93,7 +92,7 @@ button{
   border: none;
   border-radius: 10px;
   height: 36px;
-  margin: 20px 8px 4px 8px;
+  margin: 0 10px;
   width: 100%;
 }
 
@@ -177,12 +176,16 @@ button{
   align-items: center;
 }
 
-.resources:last-of-type {
+.resourceList{
+  display:grid;
+}
+
+.resourceList:last-of-type .resources {
   border-bottom: none;
 }
 
-.resourceList{
-  display:grid;
+.header__item {
+  flex: 1;
 }
 
 .subcategories{

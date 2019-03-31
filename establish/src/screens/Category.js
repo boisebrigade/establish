@@ -5,6 +5,7 @@ import Header from '../components/Header'
 import Back from '../components/Header/Back'
 import Title from '../components/Header/Title'
 import Footer from '../components/Footer'
+import Share from '../components/Header/Share'
 
 // const Resources = props => props.resources.map((resource, j) =>
 //     <React.Fragment key={j}>
@@ -48,10 +49,11 @@ export default props => {
 
   return (
     <>
-      <Header>
-        <Back />
-        <Title>{name}</Title>
-      </Header>
+      <Header
+        left={<Back />}
+        center={<Title>{name}</Title>}
+        right={<Share/>}
+      />
       <div className="listScreen">
         <div className="topPadding">
           {resources.map((resource, i ) => {

@@ -1,13 +1,44 @@
 import React from 'react';
 
-import Back from '../components/Header/Back'
-import Header from '../components/Header'
-import Footer from '../components/Footer'
-import Title from '../components/Header/Title'
-
 import { documentToHtmlString } from '@contentful/rich-text-html-renderer'
-import Share from "../components/Header/Share"
-import Favorite from "../components/Header/Favorite"
+
+import Header from '../components/Header'
+import Back from '../components/Header/Back'
+import Title from '../components/Header/Title'
+import Share from '../components/Header/Share'
+import Favorite from '../components/Header/Favorite'
+
+import Footer from '../components/Footer'
+
+import Body from '../components/Body'
+
+
+class Availability extends React.Component {
+  constructor() {
+    super()
+
+    this.state = {
+      extended: false
+    }
+  }
+
+  toggleExpanded = event => this.setState({
+    expanded: !this.state.extended
+  })
+
+  render() {
+    return this.state.extended ?
+        <div onClick={this.toggleExpanded}>
+          <span>Hours</span>
+        </div>
+
+      :
+        <div onClick={this.toggleExpanded}>
+          <span>Hours Today</span>
+
+        </div>
+  }
+}
 
 export default props => {
   const {
@@ -28,20 +59,24 @@ export default props => {
     address = null,
     phone = null,
     email = null,
-    website = null,
+    links = [],
     description = null,
+    availability = null,
   }] = resources.filter(resource => resource.id === resourceId)
 
 
-
+  console.log(data)
   return (
     <>
-      <Header>
-        <Back />
-        <Title>{name}</Title>
-        <Favorite />
-        <Share />
-      </Header>
+      <Header
+        left={<Back />}
+        center={<Title>{name}</Title>}
+        right={<>
+          <Favorite />
+          <Share />
+        </>}
+        />
+      <Body>
         <div className="topPadding resourcePage">
           {title ? <div className="resourceTitle">
             {title}
@@ -55,11 +90,16 @@ export default props => {
           {email ? <div className="email">
             <a href={`mailto:${email}`}>{email}</a>
           </div> : null}
-          {website ? <div className="urls">
-            <a href={website}>{website}</a>
+          {links.length > 0 ? <div className="urls">
+            {links.map((link, i) => {
+              console.log(link)
+              return <a className='db' key={i} href={link}>{link}</a>
+            })}
           </div> : null}
+          {availability ? <Availability hours={availability} /> : null}
           {description ? <div className="description" dangerouslySetInnerHTML={{__html: documentToHtmlString(description)}} /> : null}
         </div>
+      </Body>
       <Footer/>
     </>
   )

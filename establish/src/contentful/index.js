@@ -45,7 +45,7 @@ const transformResources = async (resource) => {
     fields: {
       title,
       description,
-      webAddress,
+      webAddress = '',
       email,
 
       address,
@@ -65,11 +65,20 @@ const transformResources = async (resource) => {
     }
   } = resource;
 
+  let links = []
+
+  if (webAddress.includes(',')) {
+    links = webAddress.split(',')
+  }
+  else {
+    links = [webAddress]
+  }
+
   return {
     id: id.substr(0, 6),
     title,
     description,
-    website: webAddress,
+    links,
     email,
     address,
     phone,
