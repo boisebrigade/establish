@@ -19,7 +19,7 @@ class Availability extends React.Component {
     super()
 
     this.state = {
-      extended: true
+      extended: false
     }
   }
 
