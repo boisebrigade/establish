@@ -7,25 +7,36 @@ import Footer from '../components/Footer'
 
 import Body from '../components/Body'
 
-export default props => {
-  const {
-    data: categories
-  } = props
+export default class extends React.Component {
+  constructor() {
+    super()
 
-  console.log(props)
-  // const handleChange = event => this.setState({
-  //   filteredCategories: this.state.categories(category => category.name.toLowerCase().includes(event.target.value.toLowerCase()))
-  // });
+    this.state = {
+      categories: []
+    }
+  }
 
-  return <>
-    <Header
-      center={<Search handleChange={console.log}/>}
-    />
-    <Body>
-    {categories.map((category, i) => {
-      return category.resources.length > 0 ? <Category key={i} {...category}/> : null
-    })}
-    </Body>
-    <Footer />
-  </>
+  handleChange = event => this.setState({
+    categories: event.target.value.length > 0 ? this.state.categories.filter(category => category.name.toLowerCase().includes(event.target.value.toLowerCase())) : this.props.data
+  });
+
+  componentDidMount() {
+    this.setState({
+      categories: this.props.data
+    })
+  }
+
+  render() {
+    return <>
+      <Header
+        center={<Search handleChange={this.handleChange} />}
+      />
+      <Body>
+      {this.state.categories.map((category, i) => {
+        return <Category key={i} {...category}  />
+      })}
+      </Body>
+      <Footer />
+    </>
+  }
 }

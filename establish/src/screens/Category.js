@@ -7,30 +7,7 @@ import Title from '../components/Header/Title'
 import Footer from '../components/Footer'
 import Share from '../components/Header/Share'
 
-// const Resources = props => props.resources.map((resource, j) =>
-//     <React.Fragment key={j}>
-//         <Link to={`/resource/${props.category.name}/${props.subcategory.name}/${resource.name}`} className="resourceList">
-//             <div className="resources">
-//                 {resource.name}
-//             </div>
-//             <img src="/icons/back.svg" alt={resource.name} className="gotoPage" />
-//         </Link>
-//     </React.Fragment>
-//   )
-
-//
-// const Subcategories = props => props.subcategories.map((subcategory, i) =>
-//     <React.Fragment key={i}>
-//         <div className="subcategoryList">
-//             <div className="subcategories">
-//                 {subcategory.name}
-//             </div>
-//             <div>
-//                 <Resources subcategory={subcategory} category={props.category} resources={subcategory.resources} />
-//             </div>
-//         </div>
-//     </React.Fragment>
-// );
+import Body from '../components/Body'
 
 export default props => {
   console.log(props)
@@ -54,19 +31,19 @@ export default props => {
         center={<Title>{name}</Title>}
         right={<Share/>}
       />
-      <div className="listScreen">
-        <div className="topPadding">
+      <Body>
+        <div className='listScreen mt3 mb3 flex flex-column'>
           {resources.map((resource, i ) => {
-            return <React.Fragment key={i}>
-              <Link to={`/resource/${categoryId}/${categoryName}/${resource.id}/${resource.title.replace(/ /g, '-')}}`} className="resourceList">
-                <div className="resources">
+            return <Link key={i} to={`/resource/${categoryId}/${categoryName}/${resource.id}/${resource.title.replace(/ /g, '-')}}`}>
+              <div className='resourceList'>
+                <div className='resources pb3 mt3 pr4'>
                   {resource.title}
                 </div>
-              </Link>
-            </React.Fragment>
+              </div>
+            </Link>
           })}
         </div>
-      </div>
+      </Body>
       <Footer />
     </>
   )

@@ -9,6 +9,11 @@ button{
   margin: auto;
 }
 
+#root {
+  max-width: 100vw;
+  height: 100vh;
+}
+
 /* ================ LANDING SCREEN ==================== */
 
 .card{
@@ -18,15 +23,6 @@ button{
   font-size: 24px;
   grid-template-columns: 1fr 2.5fr;
 }
-
-.card:first-of-type {
-  margin-top: 64px;
-}
-
-.card:last-of-type {
-  padding-bottom: 49px;
-}
-
 
 .card:nth-of-type(6n+1){
   background: #004161;
@@ -51,7 +47,7 @@ button{
 
 .header {
   background-color:#001925;
-  height: 64px;
+  min-height: 64px;
   top: 0px;
   padding: 0;
 }
@@ -70,9 +66,6 @@ button{
 }
 
 .navbar{
-  position: fixed;
-  right: 0;
-  left: 0;
   z-index: 999;
   display: flex;
   align-items: center;
@@ -83,10 +76,19 @@ button{
   align-items: center;
 }
 
+.body {
+  overflow: scroll;
+  overflow-x: hidden;
+}
+
+::-webkit-scrollbar {
+  width: 0px;  /* remove scrollbar space */
+  background: transparent;  /* optional: just make scrollbar invisible */
+}
+
 .search{
   color: rgba(255,255,255,0.85);
-  display: grid;
-  grid-template-columns: .1fr 15fr;
+  display: flex;
   background: rgba(255, 255, 255, 0.1); /*changed to .1 cuz .5 was too white*/
   background-blend-mode: overlay;
   border: none;
@@ -126,11 +128,9 @@ button{
   flex-wrap: nowrap;
   overflow: hidden;
   background-color:#001925;
-  position: fixed;
-  bottom: 0;
   width: 100%;
   padding: 4px 0;
-  height:49px;
+  min-height:49px;
 }
 
 .footerIcon{
@@ -160,27 +160,17 @@ button{
   margin-top: 4px;
 }
 
-.listScreen{
-  padding-bottom:49px;
-}
-
 .resources{
   border-bottom: 1px solid white;
   margin-left: 27px;
   color: rgba(255, 255, 255, 0.85);
   font-family: "NotoSans-SemiCondensed";
   font-size: 18px;
-  min-height: 44px;
   letter-spacing: -0.0241176em;
-  display: grid;
   align-items: center;
 }
 
-.resourceList{
-  display:grid;
-}
-
-.resourceList:last-of-type .resources {
+a:last-of-type .resourceList .resources {
   border-bottom: none;
 }
 
@@ -227,7 +217,6 @@ button{
 /* ================ RESOURCE SCREEN ==================== */
 .resourcePage{
   margin: 0 27px;
-  padding-top: 54px;
   font-family:"NotoSans-SemiCondensedLight";
 }
 
@@ -241,23 +230,18 @@ button{
 }
 
 .address{
-  height: 20px;
   line-height: 20px;
   font-size: 16px;
-  padding: 10px 0;
   color: #16DBD5;
 }
 
 .phone{
-  left: 27px;
   line-height: 29px;
   font-size: 24px;
-  padding: 10px 0;
   color: rgba(255, 255, 255, 0.85);
 }
 
 .urls{
-  width: 81px;
   line-height: 29px;
   font-size: 24px;
   padding: 10px 0;
@@ -265,10 +249,20 @@ button{
 }
 
 .description{
-  height: 271px;
   font-size: 18px;
-  padding: 10px 0;
   color: rgba(255, 255, 255, 0.85);
+}
+
+.mt-auto {
+  margin-top: auto;
+}
+
+.mb-auto {
+  margin-bottom: auto;
+}
+
+.day:first-letter {
+  text-transform:capitalize;
 }
 
 

@@ -9,11 +9,12 @@ export default class extends React.Component {
   render() {
     return (
       <>
-        <Header>
-          <Back />
-        </Header>
+        <Header
+          left={<Back />}
+        />
         <Footer />
       </>
     )
   }
 }
+

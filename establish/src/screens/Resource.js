@@ -12,30 +12,58 @@ import Footer from '../components/Footer'
 
 import Body from '../components/Body'
 
+import moment from 'moment'
 
 class Availability extends React.Component {
   constructor() {
     super()
 
     this.state = {
-      extended: false
+      extended: true
     }
   }
 
   toggleExpanded = event => this.setState({
-    expanded: !this.state.extended
+    extended: !this.state.extended
   })
 
+  static timeFormat(time) {
+    return moment(time, 'HHmm').format('hh:mm a')
+  }
+
+  static displayTime(time) {
+    if (time.includes('x')) {
+      return 'Closed'
+    } else if (!time && time === null) {
+      return 'Contact for Availability'
+    } else {
+      const [startTime, endTime] = time
+
+      return `${Availability.timeFormat(startTime)}, ${Availability.timeFormat(endTime)}`
+    }
+  }
+
   render() {
+    const currentDay = ['sunday', 'monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday'][new Date().getDay()]
+
+    const hoursToday = this.props[currentDay] ? this.props[currentDay] : null
+
     return this.state.extended ?
         <div onClick={this.toggleExpanded}>
-          <span>Hours</span>
+          <div className="pb2">Hours</div>
+          <table>
+          {Object.keys(this.props).map((day, i) => {
+            return <tr key={i}>
+              <td className='day'>{day}:</td>
+              <td>{Availability.displayTime(this.props[day])}</td>
+            </tr>
+          })}
+          </table>
         </div>
-
       :
         <div onClick={this.toggleExpanded}>
-          <span>Hours Today</span>
-
+          <div className="pb2">Hours Today</div>
+          <div className="day">{Availability.displayTime(hoursToday)}</div>
         </div>
   }
 }
@@ -57,15 +85,13 @@ export default props => {
   const [{
     title,
     address = null,
-    phone = null,
+    phone: phoneNumbers = [],
     email = null,
     links = [],
     description = null,
     availability = null,
   }] = resources.filter(resource => resource.id === resourceId)
 
-
-  console.log(data)
   return (
     <>
       <Header
@@ -77,26 +103,28 @@ export default props => {
         </>}
         />
       <Body>
-        <div className="topPadding resourcePage">
+        <div className="resourcePage">
           {title ? <div className="resourceTitle">
             {title}
           </div>: null}
-          {address ? <div className="address">
+          {address ? <div className="address pv3">
             123 Placeholder St
           </div>: null}
-          {phone ? <div className="phone">
-            <a href={`tel:${phone}`}>{phone}</a>
-          </div>: null}
+          {phoneNumbers.length > 0 ? <div className="phone pb2">
+            {phoneNumbers.map((phone, i) => {
+              return <a key={i} className='db' href={`tel:${phone}`}>{phone}</a>
+            })}
+          </div> : null}
           {email ? <div className="email">
             <a href={`mailto:${email}`}>{email}</a>
           </div> : null}
           {links.length > 0 ? <div className="urls">
             {links.map((link, i) => {
-              console.log(link)
-              return <a className='db' key={i} href={link}>{link}</a>
+              return <a key={i} className='db' href={link}>{link}</a>
             })}
           </div> : null}
-          {availability ? <Availability hours={availability} /> : null}
+          {availability ? <Availability {...availability} /> : null}
+          <hr />
           {description ? <div className="description" dangerouslySetInnerHTML={{__html: documentToHtmlString(description)}} /> : null}
         </div>
       </Body>

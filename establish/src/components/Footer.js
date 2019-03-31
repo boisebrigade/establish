@@ -5,7 +5,7 @@ import { withRouter } from 'react-router'
 const Footer = ({match: {path}}) => {
   const isActive = targetPath => path === targetPath
 
-  return <div className="footer">
+  return <div className="footer mt-auto">
     <div className={isActive('/') ? `footerNav activeNav` : `footerNav`}>
       <Link to={`/`}>
         <img className="footerIcon" src={isActive('/') ? `/assets/screens/home-active.svg` : `/assets/screens/home.svg`} alt='Home' />

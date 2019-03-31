@@ -45,12 +45,11 @@ const transformResources = async (resource) => {
     fields: {
       title,
       description,
-      webAddress = '',
+      webAddress,
       email,
 
       address,
       phone,
-      fax,
 
       sunday,
       monday,
@@ -65,25 +64,16 @@ const transformResources = async (resource) => {
     }
   } = resource;
 
-  let links = []
-
-  if (webAddress.includes(',')) {
-    links = webAddress.split(',')
-  }
-  else {
-    links = [webAddress]
-  }
 
   return {
     id: id.substr(0, 6),
     title,
     description,
-    links,
+    links: webAddress,
     email,
     address,
     phone,
-    fax,
-    availability: {
+    availability: sunday || monday || tuesday || wednesday || thursday || friday || saturday ? {
       sunday,
       monday,
       tuesday,
@@ -91,6 +81,6 @@ const transformResources = async (resource) => {
       thursday,
       friday,
       saturday,
-    }
+    } : null
   }
 };

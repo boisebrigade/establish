@@ -1,4 +1,4 @@
 import React from 'react'
 
 export default ({children}) =>
-  <span className='header__item center'>{children}</span>
+  <span className='flex center justify-center nowrap'>{children}</span>
