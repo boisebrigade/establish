@@ -1,5 +1,5 @@
 import React from 'react'
-import {Link} from 'react-router-dom'
+import { Link } from 'react-router-dom'
 
 const Ideas = props => props.ideas.map((idea, i, ideas) => (
   i === ideas.length - 1
@@ -17,7 +17,7 @@ export default props => {
 
   return (
     <Link to={`/category/${id}/${name.replace(/ /g, '-')}`} className={`card`}>
-      <img className="icons" src={icon}/>
+      <img className="icons" src={icon} alt={name} />
       <div className="category">
         <div>
           {name}

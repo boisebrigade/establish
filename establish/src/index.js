@@ -9,7 +9,6 @@ import { getAllResources } from './contentful'
 import App from './App';
 
 import './index.css';
-import './App.css'
 
 getAllResources()
   .then(data => {

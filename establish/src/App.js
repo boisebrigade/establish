@@ -16,8 +16,8 @@ const App = ({data}) => <>
       <Route path='/resource/:categoryId/:categoryName/:resourceId/:resourceName' render={props => <Resource {...props} data={data} />}/>
 
       <Route path='/favorites' render={props => <Favorites {...props} data={data} />} />
-      <Route path='/notifications' render={Notifications} />
-      <Route path='/settings' render={Settings} />
+      <Route path='/notifications' render={props => <Notifications {...props} data={data} />} />
+      <Route path='/settings' render={props => <Settings {...props} data={data} />} />
     </Switch>
   </>
 

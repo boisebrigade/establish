@@ -1,52 +1,66 @@
 import React from 'react';
 
-import '../App.css';
-import Back from "../components/Header/Back"
-import Header from "../components/Header"
-import Footer from "../components/Footer"
+import Back from '../components/Header/Back'
+import Header from '../components/Header'
+import Footer from '../components/Footer'
+import Title from '../components/Header/Title'
 
-class Resource extends React.Component {
-  render() {
-    // const category = categories.find(category => category.name === this.props.match.params.categoryName);
-    // const subcategory = category.subcategories.find(subcategory => subcategory.name === this.props.match.params.subcategoryName);
-    // const resource = subcategory.resources.find(resource => resource.name === this.props.match.params.resourceName);
+import { documentToHtmlString } from '@contentful/rich-text-html-renderer'
+import Share from "../components/Header/Share"
+import Favorite from "../components/Header/Favorite"
 
-    return (
-      <>
-        <Header>
-          <Back />
-        </Header>
-        {/*<div className="listScreen">*/}
-          {/*<div className="titleBar navbar">*/}
-            {/*<div className="title">*/}
-              {/*{category.name}*/}
-            {/*</div>*/}
-          {/*</div>*/}
-          {/*<div className="topPadding resourcePage">*/}
-            {/*<div className="resourceTitle">*/}
-              {/*{resource.name}*/}
-            {/*</div>*/}
-            {/*<div className="address">*/}
-              {/*{resource.address}*/}
-            {/*</div>*/}
-            {/*<div className="phone">*/}
-              {/*<div>{resource.phone}</div>*/}
-              {/*<div>{resource.tollNum}</div>*/}
-            {/*</div>*/}
-            {/*<div className="urls">*/}
-              {/*<div>{resource.url}</div>*/}
-              {/*<div>{resource.link}</div>*/}
-            {/*</div>*/}
-            {/*<hr/>*/}
-            {/*<div className="description">*/}
-              {/*{resource.description}*/}
-            {/*</div>*/}
-          {/*</div>*/}
-        {/*</div>*/}
-        <Footer/>
-      </>
-    )
-  }
+export default props => {
+  const {
+    match: {
+      params: {categoryId, resourceId}
+    },
+    data
+  } = props
+
+  const [{
+    name,
+    resources: resources = [],
+  }] = data.filter(category => category.id === categoryId)
+
+
+  const [{
+    title,
+    address = null,
+    phone = null,
+    email = null,
+    website = null,
+    description = null,
+  }] = resources.filter(resource => resource.id === resourceId)
+
+
+
+  return (
+    <>
+      <Header>
+        <Back />
+        <Title>{name}</Title>
+        <Favorite />
+        <Share />
+      </Header>
+        <div className="topPadding resourcePage">
+          {title ? <div className="resourceTitle">
+            {title}
+          </div>: null}
+          {address ? <div className="address">
+            123 Placeholder St
+          </div>: null}
+          {phone ? <div className="phone">
+            <a href={`tel:${phone}`}>{phone}</a>
+          </div>: null}
+          {email ? <div className="email">
+            <a href={`mailto:${email}`}>{email}</a>
+          </div> : null}
+          {website ? <div className="urls">
+            <a href={website}>{website}</a>
+          </div> : null}
+          {description ? <div className="description" dangerouslySetInnerHTML={{__html: documentToHtmlString(description)}} /> : null}
+        </div>
+      <Footer/>
+    </>
+  )
 }
-
-export default Resource

@@ -3,6 +3,7 @@ import {Link} from 'react-router-dom'
 
 import Header from '../components/Header'
 import Back from '../components/Header/Back'
+import Title from '../components/Header/Title'
 import Footer from '../components/Footer'
 
 // const Resources = props => props.resources.map((resource, j) =>
@@ -34,13 +35,14 @@ export default props => {
   console.log(props)
   const {
     match: {
-      params: {categoryId: categoryId, categoryName: categoryName}
+      params: {categoryId, categoryName}
     },
-    data: data
+    data,
   } = props
 
   const [{
-    resources: resources = [],
+    name,
+    resources = [],
   }] = data.filter(category => category.id === categoryId)
 
 
@@ -48,12 +50,13 @@ export default props => {
     <>
       <Header>
         <Back />
+        <Title>{name}</Title>
       </Header>
       <div className="listScreen">
         <div className="topPadding">
           {resources.map((resource, i ) => {
             return <React.Fragment key={i}>
-              <Link to={`/category/${categoryId}/${categoryName}/${resource.id}/${resource.title}`} className="resourceList">
+              <Link to={`/resource/${categoryId}/${categoryName}/${resource.id}/${resource.title.replace(/ /g, '-')}}`} className="resourceList">
                 <div className="resources">
                   {resource.title}
                 </div>

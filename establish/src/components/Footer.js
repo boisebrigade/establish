@@ -8,7 +8,7 @@ const Footer = ({match: {path}}) => {
   return <div className="footer">
     <div className={isActive('/') ? `footerNav activeNav` : `footerNav`}>
       <Link to={`/`}>
-        <img className="footerIcon" src={isActive('/') ? `/icons/Home-active.svg` : `/icons/Home.svg`}/>
+        <img className="footerIcon" src={isActive('/') ? `/assets/screens/home-active.svg` : `/assets/screens/home.svg`} alt='Home' />
         <div>Home</div>
       </Link>
     </div>
@@ -16,7 +16,7 @@ const Footer = ({match: {path}}) => {
     <div className={isActive('/favorites') ? `footerNav activeNav` : `footerNav`}>
       <Link to={`/favorites`}>
         <img className="footerIcon"
-             src={isActive('/favorites') ? `/icons/Favorites-active.svg` : `/icons/Favorites.svg`}/>
+             src={isActive('/favorites') ? `/assets/screens/favorite-active.svg` : `/assets/screens/favorite.svg`} alt='Favorites' />
         <div>
           Favorites
         </div>
@@ -26,7 +26,7 @@ const Footer = ({match: {path}}) => {
     <div className={isActive('/notifications') ? `footerNav activeNav` : `footerNav`}>
       <Link to={`/notifications`}>
         <img className="footerIcon"
-             src={isActive('/notifications') ? `/icons/Notifications-active.svg` : `/icons/Notifications.svg`}/>
+             src={isActive('/notifications') ? `/assets/screens/notification-active.svg` : `/assets/screens/notification.svg`} alt='Notifications'/>
         <div>
           Notifications
         </div>
@@ -35,7 +35,7 @@ const Footer = ({match: {path}}) => {
 
     <div className={isActive('/settings') ? `footerNav activeNav` : `footerNav`}>
       <Link to={`/settings`}>
-        <img className="footerIcon" src={isActive('/settings') ? `/icons/Settings-active.svg` : `/icons/Settings.svg`}/>
+        <img className="footerIcon" src={isActive('/settings') ? `/assets/screens/setting-active.svg` : `/assets/screens/setting.svg`} alt='Settings' />
         <div>
           Settings
         </div>

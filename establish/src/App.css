@@ -1,3 +1,5 @@
+@import "tachyons";
+
 a{
   text-decoration: none;
   color: inherit;
@@ -76,10 +78,6 @@ button{
   align-items: center;
 }
 
-.ml-3 {
-  margin-left: 15px;
-}
-
 .back {
   display: flex;
   justify-content: center;
@@ -96,6 +94,7 @@ button{
   border-radius: 10px;
   height: 36px;
   margin: 20px 8px 4px 8px;
+  width: 100%;
 }
 
 .searchIcon{
@@ -117,6 +116,7 @@ button{
   letter-spacing: -0.0241176em;
   padding: 0;
   outline: none;
+  text-indent: 20px;
 }
 
 
@@ -175,6 +175,10 @@ button{
   letter-spacing: -0.0241176em;
   display: grid;
   align-items: center;
+}
+
+.resources:last-of-type {
+  border-bottom: none;
 }
 
 .resourceList{
@@ -262,4 +266,41 @@ button{
   font-size: 18px;
   padding: 10px 0;
   color: rgba(255, 255, 255, 0.85);
+}
+
+
+body{
+  font-family: "NotoSans-SemiCondensed";
+  background: #002334;
+  color: white;
+  margin: 0px;
+}
+
+::placeholder {
+  color: rgba(255,255,255,0.85);
+  font-family: "SF-Pro-Text-Regular";
+}
+
+@font-face {
+  font-family: "NotoSans-SemiCondensed";
+  src: url("/fonts/NotoSans-SemiCondensed.ttf");
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "NotoSans-SemiCondensedLight";
+  src: url("/fonts/NotoSans-SemiCondensedLight.ttf");
+  font-style: light;
+}
+
+@font-face {
+  font-family: "NotoSans-SemiCondensedMedium";
+  src: url("/fonts/NotoSans-SemiCondensedMedium.ttf");
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "SF-Pro-Text-Regular";
+  src: url("/fonts/SF-Pro-Text-Regular.otf");
+  font-style: normal;
 }

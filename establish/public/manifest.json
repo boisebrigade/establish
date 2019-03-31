@@ -3,12 +3,12 @@
   "name": "Establish",
   "icons": [
     {
-      "src": "/Establish App Icon 192x192.png",
+      "src": "/assets/icons/Establish App Icon 192x192.png",
       "sizes": "192x192",
       "type": "image/png"
     },
     {
-      "src": "/Establish App Icon 512x512.png",
+      "src": "/assets/icons/Establish App Icon 512x512.png",
       "type": "image/png",
       "sizes": "512x512"
     }

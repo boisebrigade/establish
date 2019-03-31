@@ -26,7 +26,7 @@ const transformCategory = async (category) => {
       subcategories = [],
     },
     sys: {
-      id: id
+      id,
     }
   } = category;
 
@@ -43,26 +43,25 @@ const transformCategory = async (category) => {
 const transformResources = async (resource) => {
   const {
     fields: {
-      title: title,
-      description: description,
-      webAddress: webAddress,
-      email: email,
+      title,
+      description,
+      webAddress,
+      email,
 
-      address: address,
-      phone: phone,
-      fax: fax,
+      address,
+      phone,
+      fax,
 
-      sunday: sunday,
-      monday: monday,
-      tuesday: tuesday,
-      wednesday: wednesday,
-      thursday: thursday,
-      friday: friday,
-      saturday: saturday,
-
+      sunday,
+      monday,
+      tuesday,
+      wednesday,
+      thursday,
+      friday,
+      saturday,
     },
     sys: {
-      id: id
+      id
     }
   } = resource;
 
