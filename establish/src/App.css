@@ -148,7 +148,7 @@ body {
 
 .footerNav{
   flex-grow: 1;
-  font-family: "SF Pro Text";
+  font-family: "SF Pro Text", sans-serif;
   font-size: 10px;
   text-align: center;
   letter-spacing: 0.012em;
