@@ -6,6 +6,7 @@ before_install:
   - cd establish
 install:
   - npm install -g travis-ci-cloudfront-invalidation
+  - npm install
 script: npm run build
 deploy:
   provider: s3
