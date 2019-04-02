@@ -10,7 +10,6 @@ import Share from '../components/Header/Share'
 import Body from '../components/Body'
 
 export default props => {
-  console.log(props)
   const {
     match: {
       params: {categoryId, categoryName}
