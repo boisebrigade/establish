@@ -21,9 +21,9 @@
 
 <script>
   import components from '../components/'
-  import {createClient} from '../plugins/contentful.js'
-  const client = createClient(),
-      spaceID = process.env.VUE_APP_SPACE_ID
+  // import {createClient} from '../plugins/contentful.js'
+  // const client = createClient(),
+  //     spaceID = process.env.VUE_APP_SPACE_ID
   export default {
     name: 'AddResource',
     data () {
@@ -35,16 +35,16 @@
       }
     },
     methods: {
-      onSubmit (evt) {
-        evt.preventDefault();
-        createResources(this.contentTypeID, this.entries)
-      },
-      createResources(contentTypeID, entries) {
-        client.getSpace(spaceID)
-        .then((space) => space.createEntry(contentTypeId, entries))
-        .then((entry) => this.entryresults = (entry))
-        .catch(console.error)
-      }
+      // onSubmit (evt) {
+      //   evt.preventDefault();
+      //   createResources(this.contentTypeID, this.entries)
+      // },
+      // createResources(contentTypeID, entries) {
+      //   client.getSpace(spaceID)
+      //   .then((space) => space.createEntry(contentTypeId, entries))
+      //   .then((entry) => this.entryresults = (entry))
+      //   .catch(console.error)
+      // }
     }
   }
 </script>
