@@ -1,7 +1,29 @@
-curl -i -X POST -H "Content-Type: application/json" -d '{}'localhost:3000/resources
 
+// Add Assets
+curl -i -XPOST \
+  -H "Authorization: Bearer 4b741227a6375b11e718ac4beb14de30b95f40cc0e3b220338b3378e765ac6ad" \
+  https://api.contentful.com/spaces/zs9jcahfdy47/... \
+  -d '
+  {
+  "fields": {
+    "file": {
+      "en-US": {
+        "contentType": "image/jpeg",
+        "fileName": "my-cute-cat.jpg",
+        "uploadFrom": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Upload",
+            "id": "73DfxdBnwyhQNy95A8dvSf"
+          }
+        }
+      }
+    }
+  }
+}'
 
-curl -i -X POST -H "Content-Type: application/json" -d '[
+// Resources
+
   {
     "Name": "Agape in Action",
     "Addresses1": "1001 S Orchard Boise",

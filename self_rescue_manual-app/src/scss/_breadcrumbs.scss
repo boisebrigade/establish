@@ -19,14 +19,5 @@
 	li {
 		display: inline-block;
 
-		&:after {
-			content: '»';
-			display: inline-block;
-			vertical-align: 2px;
-		}
-
-		&:last-child:after {
-			display: none;
-		}
 	}
 }

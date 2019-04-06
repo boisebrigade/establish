@@ -4,22 +4,21 @@
 			<div class="section__inner">
         <hr/>
 				<div class="section__top">
-					<ul class="breadcrumbs">
-						<li><a href="#">Ada County</a></li>
-						<li><a href="#">Categories</a></li>
-						<li><a href="#">Legal Assistance &amp; Refugee Agencies</a></li>
-					</ul>
-					<ul class="list-checkboxes"  id="results">
-						<li>
+					<!-- <ul class="breadcrumbs">
+            <li v-if="this.$store.state.selectedCounty.length >= 1 ">County</li>
+            <li v-if="this.$store.state.selectedCounty">{{this.$store.state.selectedCounty}}</li>
+						<li v-if="this.$store.state.selectedCategories.length >= 1">Categories</li>
+						<li v-if="this.$store.state.selectedCategories.length >=1 ">{{this.$store.state.selectedCategories}}</li>
+					</ul> -->
+					<ul class="list-checkboxes">
+            <li v-for="county in counties">
 							<div class="checkbox">
-								<input type="checkbox" name="field-11#" id="field-11#">
-								<label for="field-11#">Ada County</label>
-							</div>
-						</li>
-						<li>
-							<div class="checkbox">
-								<input type="checkbox" name="field-12#" id="field-12#">
-								<label for="field-12#">Canyon County</label>
+								<input type="checkbox"
+                :v-model="counties"
+                :name="county.fields.title"
+                :id="county.fields.title"
+                :value="county.fields.title"></input>
+								<label :for="county.fields.title">{{county.fields.title}}</label>
 							</div>
 						</li>
 					</ul>
@@ -32,18 +31,35 @@
 <style>
   .breadcrumbs, .list-checkboxes {
     text-align :left;
+  	color: #9B9B9B;
+  	margin-bottom: 20px;
   }
 </style>
 <script>
-import Resources from './Resources.vue'
+  import Resources from './Resources.vue'
+  import axios from 'axios';
+  const spaceID = process.env.VUE_APP_SPACE_ID
+  const accessToken = process.env.VUE_APP_ACCESS_TOKEN
 
-export default {
-  name: 'Directory',
-  props: {
-    msg: String
-  },
-  components:{
-    Resources
+  export default {
+    name: 'Directory',
+    props: {
+      msg: String
+    },
+    components:{
+      Resources
+    },
+    data(){
+      return {
+        counties: [],
+        errors:[]
+      }
+    },
+    mounted(){
+      axios.get(`https://cdn.contentful.com/spaces/${spaceID}/entries/?content_type=county&access_token=${accessToken}`)
+     .then(response => {this.counties = response.data.items})
+        .then(() => {console.log('counties', this.counties)})
+        .catch(e => {this.errors.push(e)})
+    }
   }
-}
 </script>
