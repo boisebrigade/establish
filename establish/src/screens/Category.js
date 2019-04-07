@@ -34,10 +34,11 @@ export default props => {
         <div className='listScreen mt3 mb3 flex flex-column'>
           {resources.map((resource, i ) => {
             return <Link key={i} to={`/resource/${categoryId}/${categoryName}/${resource.id}/${resource.title.replace(/ /g, '-')}}`}>
-              <div className='resourceList'>
+              <div className='flex bb b--white ml4'>
                 <div className='resources pb3 mt3 pr4'>
                   {resource.title}
                 </div>
+                <img className='ml-auto pr3' src={'/assets/actions/forward.svg'} alt=''/>
               </div>
             </Link>
           })}

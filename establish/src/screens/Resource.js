@@ -49,8 +49,11 @@ class Availability extends React.Component {
     const hoursToday = this.props[currentDay] ? this.props[currentDay] : null
 
     return this.state.extended ?
-        <div onClick={this.toggleExpanded}>
-          <div className="pb2">Hours</div>
+        <div>
+          <div onClick={this.toggleExpanded} className="pb2">
+            Hours
+            <img className='ml3' src='/assets/actions/collapse.svg' alt='' />
+          </div>
           <table>
           {Object.keys(this.props).map((day, i) => {
             return <tr key={i}>
@@ -62,7 +65,10 @@ class Availability extends React.Component {
         </div>
       :
         <div onClick={this.toggleExpanded}>
-          <div className="pb2">Hours Today</div>
+          <div className="pb2">
+            Hours Today
+            <img className='ml3' src='/assets/actions/expand.svg' alt='' />
+          </div>
           <div className="day">{Availability.displayTime(hoursToday)}</div>
         </div>
   }

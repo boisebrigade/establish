@@ -169,8 +169,6 @@ body {
 }
 
 .resources{
-  border-bottom: 1px solid white;
-  margin-left: 27px;
   color: rgba(255, 255, 255, 0.85);
   font-family: "NotoSans-SemiCondensed";
   font-size: 18px;
