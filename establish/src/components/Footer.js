@@ -23,7 +23,7 @@ const Footer = ({match: {path}}) => {
       </Link>
     </div>
 
-    <div className={isActive('/notifications') ? `footerNav activeNav` : `footerNav`}>
+    <div className={`dn ` + (isActive('/notifications') ? `footerNav activeNav` : `footerNav`)}>
       <Link to={`/notifications`}>
         <img className="footerIcon"
              src={isActive('/notifications') ? `/assets/screens/notification-active.svg` : `/assets/screens/notification.svg`} alt='Notifications'/>
@@ -33,7 +33,7 @@ const Footer = ({match: {path}}) => {
       </Link>
     </div>
 
-    <div className={isActive('/settings') ? `footerNav activeNav` : `footerNav`}>
+    <div className={`dn ` + (isActive('/settings') ? `footerNav activeNav` : `footerNav`)}>
       <Link to={`/settings`}>
         <img className="footerIcon" src={isActive('/settings') ? `/assets/screens/setting-active.svg` : `/assets/screens/setting.svg`} alt='Settings' />
         <div>
