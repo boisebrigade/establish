@@ -109,6 +109,7 @@
 
 <script>
   import axios from 'axios';
+
   const spaceID = process.env.VUE_APP_SPACE_ID
   const accessToken = process.env.VUE_APP_ACCESS_TOKEN
   export default {
