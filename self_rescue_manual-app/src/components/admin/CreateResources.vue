@@ -9,9 +9,7 @@
 
 <script>
   import components from '../components/'
-  // import {createClient} from '../plugins/contentful.js'
-  // const client = createClient(),
-  //       spaceID = process.env.VUE_APP_SPACE_ID
+
 
   export default {
     name: 'home',
