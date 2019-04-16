@@ -5,12 +5,11 @@ import { Storage } from "../../Storage";
 
 function Favorite({ id }) {
   const [isFavorite, setFavorite] = useState(false);
-
   useEffect(() => {
     Storage.open()
       .then(() => Storage.table('favorites').get(id)
         .then(isFavorite => setFavorite(isFavorite && true)))
-  }, [id])
+  })
 
   const onFavorite = async (id) => {
     await Storage.open();

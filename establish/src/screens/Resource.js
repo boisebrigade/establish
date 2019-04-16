@@ -104,7 +104,7 @@ export default props => {
         left={<Back />}
         center={<Title>{name}</Title>}
         right={<>
-          <Favorite />
+          <Favorite id={resourceId} />
           <Share />
         </>}
         />
