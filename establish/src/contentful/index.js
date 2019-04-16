@@ -1,4 +1,5 @@
 import * as Contentful from 'contentful';
+import { Storage } from '../Storage';
 
 const client = Contentful.createClient({
   space: process.env.REACT_APP_CONTENTFUL_SPACE_ID,
@@ -9,12 +10,23 @@ export const getAllResources = async () => {
   const categories = await client.getEntries({content_type: 'category'});
   const allCategories = await Promise.all(await categories.items.map(async category => await transformCategory(category)))
 
-  return allCategories.filter(category => category.resources.length > 0)
+  const resourceCategories = allCategories.filter(category => category.resources.length > 0)
+  const resources = resourceCategories.reduce((resources, category) => resources.concat(category.resources), [])
+  await Storage.open()
+  await Storage.table('resources').bulkPut(resources) // Upsert found Resources
+
+  return resourceCategories
 };
 
-const fetchResources = async (categoryId = '') => {
+const fetchResources = async (categoryId = '', categoryTitle = '') => {
   const resources = await client.getEntries({'fields.category.sys.id': categoryId, content_type: 'resource'});
-  return Promise.all(await resources.items.map(resource => transformResources(resource)))
+  return Promise.all(await resources.items.map(async resource => ({
+    category: {
+      id: categoryId,
+      title: categoryTitle
+    },
+    ...(await transformResources(resource))
+  })))
 }
 
 const transformCategory = async (category) => {
@@ -35,7 +47,7 @@ const transformCategory = async (category) => {
     name,
     icon,
     ideas,
-    resources: await fetchResources(id),
+    resources: await fetchResources(id, name),
     subcategories: subcategories.length ? subcategories.map(cat => transformCategory(cat)) : [],
   }
 };
