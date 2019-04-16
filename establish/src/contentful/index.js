@@ -23,7 +23,7 @@ const fetchResources = async (categoryId = '', categoryTitle = '') => {
   return Promise.all(await resources.items.map(async resource => ({
     category: {
       id: categoryId,
-      title: categoryTitle
+      name: categoryTitle
     },
     ...(await transformResources(resource))
   })))
@@ -47,7 +47,7 @@ const transformCategory = async (category) => {
     name,
     icon,
     ideas,
-    resources: await fetchResources(id, name),
+    resources: await fetchResources(id.substr(0, 6), name),
     subcategories: subcategories.length ? subcategories.map(cat => transformCategory(cat)) : [],
   }
 };
