@@ -1,4 +1,5 @@
 import * as Contentful from 'contentful';
+import { parsePhoneNumberFromString } from 'libphonenumber-js'
 import { Storage } from '../Storage';
 
 const client = Contentful.createClient({
@@ -33,7 +34,7 @@ const transformCategory = async (category) => {
   const {
     fields: {
       title: name = null,
-      icon: { fields: { file: { url: icon } } } = { fields: { file: { url: null } } },
+      mobileIcon: { fields: { file: { url: icon } } } = { fields: { file: { url: null } } },
       ideas = [],
       subcategories = [],
     },
@@ -47,7 +48,7 @@ const transformCategory = async (category) => {
     name,
     icon,
     ideas,
-    resources: await fetchResources(id.substr(0, 6), name),
+    resources: await fetchResources(id, name),
     subcategories: subcategories.length ? subcategories.map(cat => transformCategory(cat)) : [],
   }
 };
@@ -57,42 +58,39 @@ const transformResources = async (resource) => {
     fields: {
       title,
       description,
-      webAddress,
+      webSite = null,
       email,
 
       address,
-      phone,
+      phoneNumber = '',
 
-      sunday,
-      monday,
-      tuesday,
-      wednesday,
-      thursday,
-      friday,
-      saturday,
+      availability = [],
     },
     sys: {
       id
     }
   } = resource;
 
+  const hours = availability.reduce((acc, {fields: {day, hours = null, callForAvailability = null}}) => {
+    if (hours || callForAvailability)
+      acc[day] = {hours: hours, callForAvailability: callForAvailability}
+    return acc
+  }, {})
+
+  let number = null;
+
+  if (phoneNumber) {
+    number = parsePhoneNumberFromString(`${phoneNumber.replace(/ |\)|\(|-/g, '')}`, 'US');
+  }
 
   return {
     id: id.substr(0, 6),
     title,
     description,
-    links: webAddress,
+    website: webSite,
     email,
     address,
-    phone,
-    availability: sunday || monday || tuesday || wednesday || thursday || friday || saturday ? {
-      sunday,
-      monday,
-      tuesday,
-      wednesday,
-      thursday,
-      friday,
-      saturday,
-    } : null
+    phoneNumber: number,
+    availability: Object.entries(hours).length !== 0 ? hours: null
   }
 };

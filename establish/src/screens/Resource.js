@@ -12,8 +12,6 @@ import Footer from '../components/Footer'
 
 import Body from '../components/Body'
 
-import moment from 'moment'
-
 class Availability extends React.Component {
   constructor() {
     super()
@@ -27,26 +25,12 @@ class Availability extends React.Component {
     extended: !this.state.extended
   })
 
-  static timeFormat(time) {
-    return moment(time, 'HHmm').format('hh:mm a')
-  }
-
-  static displayTime(time) {
-    if (time.includes('x')) {
-      return 'Closed'
-    } else if (!time && time === null) {
-      return 'Contact for Availability'
-    } else {
-      const [startTime, endTime] = time
-
-      return `${Availability.timeFormat(startTime)}, ${Availability.timeFormat(endTime)}`
-    }
-  }
-
   render() {
-    const currentDay = ['sunday', 'monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday'][new Date().getDay()]
+    const daysInAWeek = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday']
+    const currentDay = daysInAWeek[new Date().getDay()]
 
-    const hoursToday = this.props[currentDay] ? this.props[currentDay] : null
+    const hoursByDay =
+        day => this.props[day] ? this.props[day].callForAvailability ? this.props[day].callForAvailability : this.props[day].hours : 'Closed';
 
     return this.state.extended ?
         <div>
@@ -55,12 +39,14 @@ class Availability extends React.Component {
             <img className='ml3' src='/assets/actions/collapse.svg' alt='' />
           </div>
           <table>
-          {Object.keys(this.props).map((day, i) => {
-            return <tr key={i}>
-              <td className='day'>{day}:</td>
-              <td>{Availability.displayTime(this.props[day])}</td>
-            </tr>
-          })}
+            <tbody>
+            {daysInAWeek.map((day, i) => {
+              return <tr key={i}>
+                <td className='day'>{day}:</td>
+                <td>{hoursByDay(day)}</td>
+              </tr>
+            })}
+            </tbody>
           </table>
         </div>
       :
@@ -69,7 +55,7 @@ class Availability extends React.Component {
             Hours Today
             <img className='ml3' src='/assets/actions/expand.svg' alt='' />
           </div>
-          <div className="day">{Availability.displayTime(hoursToday)}</div>
+          <div className="day">{hoursByDay(currentDay)}</div>
         </div>
   }
 }
@@ -91,12 +77,19 @@ export default props => {
   const [{
     title,
     address = null,
-    phone: phoneNumbers = [],
+    phoneNumber = null,
     email = null,
-    links = [],
+    website = null,
     description = null,
     availability = null,
   }] = resources.filter(resource => resource.id === resourceId)
+
+
+  const standAloneMode = () =>
+    (window.matchMedia('(display-mode: standalone)').matches) || ('standalone' in window.navigator)
+
+  const mapLink = address =>
+    standAloneMode() ? `maps://maps.google.com/maps?q=${address}` : `https://maps.google.com/maps?q=${address}`
 
   return (
     <>
@@ -114,20 +107,16 @@ export default props => {
             {title}
           </div>: null}
           {address ? <div className="address pv3">
-            123 Placeholder St
+            <a href={mapLink(address)}>{address}</a>
           </div>: null}
-          {phoneNumbers.length > 0 ? <div className="phone pb2">
-            {phoneNumbers.map((phone, i) => {
-              return <a key={i} className='db' href={`tel:${phone}`}>{phone}</a>
-            })}
+          {phoneNumber ? <div className="phone pb2">
+              <a className='db' href={phoneNumber.getURI()}>{phoneNumber.formatNational()}</a>
           </div> : null}
           {email ? <div className="email">
             <a href={`mailto:${email}`}>{email}</a>
           </div> : null}
-          {links.length > 0 ? <div className="urls">
-            {links.map((link, i) => {
-              return <a key={i} className='db' href={link}>{link}</a>
-            })}
+          {website ? <div className="urls">
+              <a className='db' href={website}>{website}</a>
           </div> : null}
           {availability ? <Availability {...availability} /> : null}
           <hr />
