@@ -6,7 +6,7 @@
     "@contentful/rich-text-html-renderer": "^13.1.0",
     "contentful": "^7.5.0",
     "dexie": "^2.0.4",
-    "moment": "^2.24.0",
+    "libphonenumber-js": "^1.7.15",
     "react": "^16.8.5",
     "react-dom": "^16.8.5",
     "react-router-dom": "^5.0.0",
