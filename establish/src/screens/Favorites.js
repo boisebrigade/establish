@@ -25,7 +25,7 @@ export default function Favorites() {
       <Body>
         <div className='listScreen mt3 mb3 flex flex-column'>
           {favorites.filter(resource => resource).map((resource, i) =>
-            <Link key={i} to={`/resource/${resource.category.id}/${resource.category.name}/${resource.id}/${resource.title.replace(/ /g, '-')}}`}>
+            <Link key={i} to={`/resource/${resource.category.id.substr(0, 6)}/${resource.category.name}/${resource.id}/${resource.title.replace(/ /g, '-')}}`}>
               <div className='flex bb b--white ml4'>
                 <div className='resources pb3 mt3 pr4'>{resource.title}</div>
                 <img className='ml-auto pr3' src={'/assets/actions/forward.svg'} alt=''/>
