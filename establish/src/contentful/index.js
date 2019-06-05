@@ -20,7 +20,7 @@ export const getAllResources = async () => {
 };
 
 const fetchResources = async (categoryId = '', categoryTitle = '') => {
-  const resources = await client.getEntries({'fields.category.sys.id': categoryId, content_type: 'resource'});
+  const resources = await client.getEntries({'fields.category_establish.sys.id': categoryId, content_type: 'resource'});
   return Promise.all(await resources.items.map(async resource => ({
     category: {
       id: categoryId,
