@@ -4,6 +4,7 @@ phases:
     runtime-versions:
       nodejs: 12
     commands:
+      - cd establish
       - npm install
       - npm run build
       - aws s3 sync build s3://www.welcomeidaho.com --delete
