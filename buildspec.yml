@@ -7,4 +7,4 @@ phases:
       - cd establish
       - npm install
       - npm run build
-      - aws s3 sync build s3://www.welcomeidaho.com --delete
+      - aws s3 sync build s3://welcomeidaho.com --delete
