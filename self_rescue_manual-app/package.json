@@ -13,7 +13,7 @@
     "@fortawesome/free-solid-svg-icons": "^5.4.1",
     "@fortawesome/vue-fontawesome": "^0.1.1",
     "axios": "^0.18.0",
-    "bootstrap-vue": "^2.0.0-rc.11",
+    "bootstrap-vue": "^2.0.0-rc.12",
     "contentful": "^7.5.0",
     "nodemon": "^1.18.9",
     "register-service-worker": "^1.0.0",
